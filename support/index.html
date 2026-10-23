@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Support: Quillote</title>
+  <meta name="description" content="Support for Quillote: system requirements, known issues, the beta file model, and how to get help.">
+  <link rel="canonical" href="https://quillote.com/support/">
+  <meta name="theme-color" content="#0b0d11">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Quillote">
+  <meta property="og:title" content="Support: Quillote">
+  <meta property="og:description" content="System requirements, known issues, the beta file model, and how to get help.">
+  <meta property="og:url" content="https://quillote.com/support/">
+  <meta property="og:image" content="https://quillote.com/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/quillote-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="describedby" href="../llms.txt" type="text/plain">
+  <link rel="preload" href="../assets/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://quillote.com/support/","url":"https://quillote.com/support/","name":"Support: Quillote","description":"System requirements, known issues, the beta file model, and how to get help.","isPartOf":{"@id":"https://quillote.com/#website"},"dateModified":"2026-10-23"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Quillote","item":"https://quillote.com/"},{"@type":"ListItem","position":2,"name":"Support","item":"https://quillote.com/support/"}]}]}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../" aria-label="Quillote home"><img class="brand-mark" src="../assets/img/quillote-mark.svg" alt="" width="30" height="30" aria-hidden="true"><span class="brand-word">Quillote</span></a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span><span class="visually-hidden">Menu</span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../#modes">Modes</a>
+        <a href="../#file">The file</a>
+        <a href="../#speed">Speed</a>
+        <a href="../#platforms">Platforms</a>
+        <a href="../#faq">FAQ</a>
+        <a class="nav-cta" href="../#download">Download <span aria-hidden="true">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-main">
+    <div class="page-shell">
+      <div class="page-hero">
+        <p class="label"><span>Help</span> Support</p>
+        <h1>How to get help.</h1>
+        <p class="lead">Quillote is in private beta. Start here for requirements and the file model. If something is still stuck, write to us.</p>
+        <p class="page-updated">Updated 23 October 2026</p>
+      </div>
+
+      <div class="prose">
+        <h2>Requirements</h2>
+        <ul>
+          <li><strong>macOS:</strong> Apple Silicon, macOS 11 or later. The current beta DMG is not signed or notarized.</li>
+          <li><strong>iPhone:</strong> iOS 15 or later. Beta builds are installed through Xcode or TestFlight.</li>
+          <li><strong>Android:</strong> Android 7.0 (API 24) or later. Beta builds are signed for testing.</li>
+          <li><strong>Windows and Linux:</strong> build from source with Tauri 2 and the platform webview.</li>
+        </ul>
+
+        <h2>Opening the macOS beta</h2>
+        <p>The beta is unsigned. Drag Quillote into Applications, then right-click the app and choose <strong>Open</strong> once. After that, macOS remembers it. If the app still refuses to launch, check <code>System Settings → Privacy &amp; Security</code> for an Open Anyway button.</p>
+
+        <h2>The phone file model</h2>
+        <p>Phones do not hand apps a stable path they can write back to. Quillote copies a file you pick into its own sandbox, edits that copy, and exports through the share sheet. This is deliberate: it avoids the silent 0-byte writes that the content provider APIs can cause. Your original stays untouched until you export.</p>
+
+        <h2>Known issues</h2>
+        <ul>
+          <li>The macOS DMG is unsigned in the beta. Signing and notarization are planned before the public release.</li>
+          <li>Windows and Linux installers are not published yet. The source builds are the path for now.</li>
+          <li>The iPhone build needs a granted development profile; it is not a TestFlight build yet.</li>
+          <li>On Android, the system picker ignores extension filters. Quillote checks the picked file name before it copies anything and refuses binary files.</li>
+          <li>Toggling word wrap or line numbers rebuilds the active view. The text and selection survive; the undo history for that document does not.</li>
+        </ul>
+
+        <h2>Something else?</h2>
+        <p>Email <a href="mailto:hello@quillote.com">hello@quillote.com</a> with the app version, your platform, and the smallest file that reproduces the problem. If the file is private, describe the shape of it instead; do not send anything you would not want in an inbox.</p>
+        <p>You can also open an issue on the public site repository: <a href="https://github.com/eulogik/quillote-site/issues" rel="noopener">github.com/eulogik/quillote-site/issues</a>.</p>
+      </div>
+
+      <div class="page-cta">
+        <a class="btn btn-gold" href="../#download">Download for macOS</a>
+        <a class="btn btn-ghost" href="../privacy/">Privacy</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-brand">
+        <a class="brand" href="../" aria-label="Quillote home"><img class="brand-mark" src="../assets/img/quillote-mark.svg" alt="" width="30" height="30" aria-hidden="true"><span class="brand-word">Quillote</span></a>
+        <p>A tiny code and Markdown editor, built by <a href="https://eulogik.com" rel="noopener">Eulogik</a>. Made on a Mac, finished on a phone.</p>
+      </div>
+      <div class="footer-col"><h3>Product</h3><a href="../#modes">Modes</a><a href="../#speed">Speed</a><a href="../#platforms">Platforms</a><a href="../changelog/">Changelog</a></div>
+      <div class="footer-col"><h3>Resources</h3><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../llms.txt">llms.txt</a><a href="../sitemap.xml">Sitemap</a></div>
+      <div class="footer-col"><h3>Elsewhere</h3><a href="https://github.com/eulogik" rel="noopener">GitHub</a><a href="https://eulogik.com" rel="noopener">Eulogik</a><a href="mailto:hello@quillote.com">hello@quillote.com</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Eulogik. Quillote is a product of Eulogik.</p><p>No cookies. No analytics. No tracking pixels.</p></div>
+  </footer>
+  <script src="../assets/js/site.js" defer></script>
+</body>
+</html>

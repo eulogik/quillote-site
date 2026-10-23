@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quillote: a tiny Markdown editor with a real Live mode</title>
+  <meta name="description" content="Quillote is a 5.2 MB Markdown and code editor for macOS, iPhone and Android. Live mode styles the file as you type. Local files, no account, no telemetry.">
+  <link rel="canonical" href="https://quillote.com/">
+  <meta name="theme-color" content="#0b0d11">
+  <meta name="color-scheme" content="dark">
+  <meta name="author" content="Eulogik">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Quillote">
+  <meta property="og:title" content="Quillote: write Markdown, watch it take shape">
+  <meta property="og:description" content="Live Markdown with a real code editor inside. A 5.2 MB Mac app, 7.2 MB on Android. Local files, no account, no telemetry.">
+  <meta property="og:url" content="https://quillote.com/">
+  <meta property="og:image" content="https://quillote.com/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Quillote, a tiny code and Markdown editor">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quillote: write Markdown, watch it take shape">
+  <meta name="twitter:description" content="Live Markdown with a real code editor inside. A 5.2 MB Mac app, 7.2 MB on Android. Local files, no account, no telemetry.">
+  <meta name="twitter:image" content="https://quillote.com/assets/img/og.jpg">
+
+  <link rel="icon" href="assets/img/quillote-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="alternate" type="text/markdown" href="index.md" title="Quillote in Markdown">
+  <link rel="describedby" href="llms.txt" type="text/plain">
+
+  <link rel="preload" href="assets/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/desktop-live-hero.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://quillote.com/#website",
+        "url": "https://quillote.com/",
+        "name": "Quillote",
+        "description": "A tiny code and Markdown editor with live preview.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://quillote.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://quillote.com/#org",
+        "name": "Eulogik",
+        "url": "https://eulogik.com",
+        "logo": "https://quillote.com/assets/img/quillote-icon.png",
+        "sameAs": ["https://github.com/eulogik"]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://quillote.com/#webpage",
+        "url": "https://quillote.com/",
+        "name": "Quillote: a tiny Markdown editor with a real Live mode",
+        "isPartOf": { "@id": "https://quillote.com/#website" },
+        "about": { "@id": "https://quillote.com/#app" },
+        "primaryImageOfPage": "https://quillote.com/assets/img/og.jpg",
+        "datePublished": "2026-10-22",
+        "dateModified": "2026-10-23"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://quillote.com/#app",
+        "name": "Quillote",
+        "operatingSystem": "macOS, iOS, Android, Windows, Linux",
+        "applicationCategory": "DeveloperApplication",
+        "description": "A tiny code and Markdown editor with Source, Live and Read views. Local files, no account, no telemetry.",
+        "softwareVersion": "0.1.0",
+        "isAccessibleForFree": true,
+        "license": "Proprietary",
+        "downloadUrl": "https://quillote.com/assets/downloads/Quillote_0.1.0_universal.dmg",
+        "screenshot": "https://quillote.com/assets/img/desktop-live-hero.png",
+        "featureList": [
+          "Source, Live and Read views",
+          "Markdown with tables and KaTeX math in Read",
+          "Around 100 code languages with lazy highlighting",
+          "Local plain-text files",
+          "No account and no telemetry",
+          "Crash snapshots every five seconds while dirty"
+        ],
+        "author": { "@id": "https://quillote.com/#org" },
+        "publisher": { "@id": "https://quillote.com/#org" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://quillote.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Quillote?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quillote is a small code and Markdown editor for macOS, iPhone and Android. It has three views: Source, Live and Read."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Quillote free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The beta is free. Pricing for the 1.0 release has not been decided."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Quillote work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Quillote opens files on your disk and needs no connection. Links open in your browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Quillote collect any data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. There are no accounts, no analytics and no telemetry. The only network request is a link you choose to open."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Quillote support code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. It highlights around 100 languages, with line numbers and a lazy-loaded language chunk for each file type."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it support math and tables?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Read mode renders tables and KaTeX math. Live mode styles headings, emphasis, code and links; tables and math stay as source."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use it on my phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The iPhone and Android apps are in beta. A file you open copies into the app sandbox and leaves through the share sheet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is it only 5.2 MB?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It uses the system webview instead of bundling Chromium, ships no UI or editor fonts, and builds Rust with a size-tuned release profile. The budgets are enforced in CI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the macOS build signed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The beta DMG is unsigned. Right-click the app and choose Open the first time. Signing and notarization are the next release step."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What about Windows and Linux?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The same codebase builds on Windows and Linux. CI-built installers are attached to the GitHub release; they are unsigned."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="nav-shell">
+      <a class="brand" href="./" aria-label="Quillote home"><img class="brand-mark" src="assets/img/quillote-mark.svg" alt="" width="30" height="30" aria-hidden="true"><span class="brand-word">Quillote</span></a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="#modes">Modes</a>
+        <a href="#file">The file</a>
+        <a href="#speed">Speed</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#download">Download <span aria-hidden="true">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <img class="hero-watermark" src="assets/img/quillote-mark.svg" alt="" width="820" height="820" aria-hidden="true">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Quillote 0.1.0 · public beta</p>
+          <h1 id="hero-title">Write Markdown. Watch it <em>take shape</em>.</h1>
+          <p class="hero-sub">Live mode styles headings, emphasis, code and links as you type, with the source still in the file. A 5.2 MB universal Mac app, 7.2 MB on Android, and the same three views on iPhone. No account, no telemetry, no browser engine in a trench coat.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="assets/downloads/Quillote_0.1.0_universal.dmg" download>Download for macOS</a>
+            <a class="btn btn-ghost" href="#modes">See the three modes <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="hero-note">5.2 MB universal DMG · Apple Silicon + Intel · macOS 10.13+ · unsigned beta, right-click to open</p>
+          <div class="hero-proof">
+            <span><strong>0</strong> telemetry</span>
+            <span><strong>141.1 KB</strong> initial JS</span>
+            <span><strong>5</strong> platforms, one codebase</span>
+          </div>
+        </div>
+
+        <div class="hero-stage" aria-hidden="true">
+          <div class="window-frame">
+            <div class="window-bar">
+              <span class="traffic"><i></i><i></i><i></i></span>
+              <span class="window-title">Quillote</span>
+              <span class="window-dots">···</span>
+            </div>
+            <picture>
+              <source srcset="assets/img/desktop-live-hero.webp" type="image/webp">
+              <img src="assets/img/desktop-live-hero.png" alt="" width="2400" height="1600" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+          <div class="phone-frame">
+            <span class="phone-notch"></span>
+            <picture>
+              <source srcset="assets/img/iphone-first-run-dark-2x.webp" type="image/webp">
+              <img src="assets/img/iphone-first-run-dark-2x.png" alt="" width="804" height="1748" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="chip chip-a">5.2 MB <small>universal DMG</small></span>
+          <span class="chip chip-b">0 <small>trackers</small></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-strip" aria-label="Principles">
+      <div class="proof-shell">
+        <p><span class="proof-mark">✳</span> Local-first by default</p>
+        <p><span class="proof-mark">✳</span> No account, ever</p>
+        <p><span class="proof-mark">✳</span> Plain text, not a database</p>
+        <p><span class="proof-mark">✳</span> macOS · iOS · Android · Windows · Linux</p>
+      </div>
+    </section>
+
+    <section class="section modes" id="modes" aria-labelledby="modes-title">
+      <div class="section-head">
+        <p class="label"><span>01</span> Three modes</p>
+        <h2 id="modes-title">One file. Three ways to see it.</h2>
+        <p class="lead">Switch views without converting anything. The file on disk never changes. The tabs below are live: try them.</p>
+      </div>
+
+      <div class="demo-window" id="demo" data-mode="live">
+        <div class="demo-bar">
+          <span class="traffic"><i></i><i></i><i></i></span>
+          <span class="demo-tab-title">field-notes.md</span>
+          <span class="demo-dots">···</span>
+        </div>
+        <div class="demo-panels">
+          <div class="demo-panel" id="panel-source" role="tabpanel" aria-labelledby="tab-source" hidden>
+            <pre class="source-code"><span class="tok-h"># Field notes</span>
+
+A small editor for <span class="tok-strong">**code**</span> and <span class="tok-em">*prose*</span>.
+The file stays <span class="tok-plain">plain text</span>.
+
+<span class="tok-h">## One file, three views</span>
+
+Read more in the <span class="tok-link">[field notes](https://quillote.com/notes)</span>.
+
+<span class="tok-fence">~~~ts</span>
+<span class="tok-code">const mode = "live";</span>
+<span class="tok-fence">~~~</span>
+
+The source is never out of reach.</pre>
+          </div>
+          <div class="demo-panel demo-live" id="panel-live" role="tabpanel" aria-labelledby="tab-live">
+            <div class="live-doc">
+              <h3>Field notes</h3>
+              <p>A small editor for <strong>code</strong> and <em>prose</em>. The file stays plain text.</p>
+              <h4>One file, three views</h4>
+              <p>Read more in the <a href="https://quillote.com/notes">field notes</a>.</p>
+              <pre><code><span class="code-key">const</span> mode = <span class="code-str">"live"</span>;</code></pre>
+              <p class="live-tail">The source is never out of reach.<span class="caret" aria-hidden="true"></span></p>
+            </div>
+          </div>
+          <div class="demo-panel demo-read" id="panel-read" role="tabpanel" aria-labelledby="tab-read" hidden>
+            <article class="read-doc">
+              <p class="read-kicker">Field notes</p>
+              <h3>One file, three views</h3>
+              <p>A small editor for <strong>code</strong> and <em>prose</em>. The file stays plain text.</p>
+              <p>Read more in the <a href="https://quillote.com/notes">field notes</a>.</p>
+              <pre><code><span class="code-key">const</span> mode = <span class="code-str">"live"</span>;</code></pre>
+              <p>The source is never out of reach.</p>
+            </article>
+          </div>
+        </div>
+        <div class="demo-status">
+          <span class="demo-file">field-notes.md</span>
+          <span class="demo-meta">Markdown · 43 words · UTF-8 · LF</span>
+          <div class="demo-tabs" role="tablist" aria-label="View mode">
+            <button type="button" class="demo-tab" id="tab-source" role="tab" aria-selected="false" aria-controls="panel-source" data-demo-tab="source" tabindex="-1">Source</button>
+            <button type="button" class="demo-tab is-active" id="tab-live" role="tab" aria-selected="true" aria-controls="panel-live" data-demo-tab="live" tabindex="0">Live</button>
+            <button type="button" class="demo-tab" id="tab-read" role="tab" aria-selected="false" aria-controls="panel-read" data-demo-tab="read" tabindex="-1">Read</button>
+          </div>
+        </div>
+      </div>
+      <p class="demo-caption">Interactive preview. The real app opens your files, not a demo document.</p>
+
+      <div class="live-feature" id="live">
+        <div class="live-feature-head">
+          <p class="label">Live mode</p>
+          <h3>Live is the mode you will stay in.</h3>
+          <p>This is not a preview pane bolted onto a text box. Live styles the file in the same buffer you are typing in. Headings, emphasis, inline code, links and fenced code settle into place while the Markdown stays underneath. One keystroke takes you back to Source.</p>
+          <p class="live-note">Recorded in the real app, at normal typing speed. No cuts, no mockup.</p>
+        </div>
+        <div class="live-video">
+          <video src="assets/img/quillote-live.mp4" poster="assets/img/quillote-live-poster.png" width="1200" height="800" autoplay muted loop playsinline preload="metadata" aria-label="Typing Markdown in Quillote Live mode; headings, bold text and code style themselves in place."></video>
+          <p class="demo-caption">Live mode, typed live. The file is still Markdown.</p>
+        </div>
+        <div class="live-truth">
+          <div>
+            <h4>What Live does</h4>
+            <ul>
+              <li>Styles headings, bold, italic, inline code, links and fenced code</li>
+              <li>Keeps the source and the cursor in one place</li>
+              <li>Switches back to Source with one keystroke</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What waits for Read</h4>
+            <ul>
+              <li>Tables, KaTeX math, images and the finished page</li>
+              <li>KaTeX loads only when a document needs it</li>
+              <li>Nothing is hidden from the file</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What never changes</h4>
+            <p>The file on disk. Markdown goes in, Markdown comes out. No database, no conversion, no format only Quillote can read.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section file-section" id="file" aria-labelledby="file-title">
+      <div class="split">
+        <div class="split-sticky">
+          <p class="label"><span>02</span> The file</p>
+          <h2 id="file-title">Nothing between you and the bytes.</h2>
+          <p class="lead">No database. No proprietary document. Every note is a file you can open in any editor, forever. Quillote is a view over your disk, not a new home for your words.</p>
+          <a class="text-link" href="https://github.com/eulogik" rel="noopener">Follow the build on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <ol class="feature-list">
+          <li>
+            <span class="feature-num">01</span>
+            <div><h3>Plain text, always</h3><p>.md, .txt, source code. Nothing leaves the file system, and nothing gets rewritten into a format only we can read.</p></div>
+          </li>
+          <li>
+            <span class="feature-num">02</span>
+            <div><h3>Around 100 languages</h3><p>Syntax highlighting is detected from the file name, shebang or modeline. Each language is a lazy chunk, so the first file opens fast.</p></div>
+          </li>
+          <li>
+            <span class="feature-num">03</span>
+            <div><h3>Three views, one buffer</h3><p>Source, Live and Read share the same text. Code files stay in Source, where they belong. Markdown gets the full set.</p></div>
+          </li>
+          <li>
+            <span class="feature-num">04</span>
+            <div><h3>Math, tables, links, images</h3><p>Read mode handles real tables and KaTeX math, and loads KaTeX only when a document needs it. Relative images resolve against the file.</p></div>
+          </li>
+          <li>
+            <span class="feature-num">05</span>
+            <div><h3>A command surface, not a toolbar</h3><p>The palette, shortcuts and the 1 / 2 / 3 mode keys keep your hands on the keyboard. The phone gets a formatting bar above the keyboard.</p></div>
+          </li>
+          <li>
+            <span class="feature-num">06</span>
+            <div><h3>Crash-safe by default</h3><p>A snapshot every five seconds while the buffer is dirty. Autosave is off on the desktop and on for the phone. You decide what leaves the app.</p></div>
+          </li>
+          <li>
+            <span class="feature-num">07</span>
+            <div><h3>Print, PDF, HTML</h3><p>Print the page, export a PDF on macOS, or copy the rendered article as HTML. The file stays the source of truth.</p></div>
+          </li>
+          <li>
+            <span class="feature-num">08</span>
+            <div><h3>Two themes with a point of view</h3><p>Night is ink and gold. Ink is warm parchment, not a white page with a blue button. Both are built to sit with the words, not shout over them.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="paper-section" id="ink" aria-labelledby="ink-title">
+      <div class="paper-inner">
+        <div class="paper-copy">
+          <p class="label label-dark"><span>03</span> Read mode</p>
+          <h2 id="ink-title">The page, without the machinery.</h2>
+          <p class="paper-lead">Read mode turns the file into a quiet article: real tables, math, links and images. The editor stays underneath, one keystroke away.</p>
+          <p class="paper-note">This is <strong>Ink</strong>, the light theme. Warm parchment instead of white, amber instead of system blue. The lowest text pair measures 4.88:1.</p>
+          <div class="swatches">
+            <span><i style="background:#f5efe4"></i>#f5efe4</span>
+            <span><i style="background:#ece3d3"></i>#ece3d3</span>
+            <span><i style="background:#2a241c"></i>#2a241c</span>
+            <span><i style="background:#6b5f50"></i>#6b5f50</span>
+            <span><i style="background:#8c4a12"></i>#8c4a12</span>
+          </div>
+        </div>
+        <div class="paper-card">
+          <div class="paper-bar">
+            <span class="traffic traffic-light"><i></i><i></i><i></i></span>
+            <span>field-notes.md · Read</span>
+          </div>
+          <article class="paper-article">
+            <p class="paper-kicker">Field notes · 23 October 2026</p>
+            <h3>A quiet file for loud ideas</h3>
+            <p>The best tool is the one you forget you are using. Quillote stays close to the file: no database, no lock-in, no account asking for your email before you can type a sentence.</p>
+            <p>Write in <strong>Markdown</strong> or in <em>plain prose</em>. Switch to Live to see the formatting settle in place. Switch to Read when you want the page to feel like a page.</p>
+            <table>
+              <caption class="visually-hidden">A small comparison of views</caption>
+              <thead><tr><th scope="col">View</th><th scope="col">What it shows</th></tr></thead>
+              <tbody>
+                <tr><td>Source</td><td>The file, markdown and all</td></tr>
+                <tr><td>Live</td><td>Formatting in place, markers hidden</td></tr>
+                <tr><td>Read</td><td>A clean article, tables and math</td></tr>
+              </tbody>
+            </table>
+            <p class="formula">E = mc<sup>2</sup></p>
+            <blockquote>Write in the same file you ship.</blockquote>
+            <p class="paper-small">The light theme, in its natural habitat. Same file, no conversion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section speed" id="speed" aria-labelledby="speed-title">
+      <div class="section-head">
+        <p class="label"><span>04</span> Speed</p>
+        <h2 id="speed-title">Small is a feature. Not an apology.</h2>
+        <p class="lead">These are hard gates in the build, not launch-day claims. The app uses the system webview instead of bundling Chromium, and the Rust release profile is tuned for size.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="stat-num">5.2</span><span class="stat-unit">MB</span><span class="stat-label">universal DMG</span></div>
+        <div class="stat"><span class="stat-num">7.2</span><span class="stat-unit">MB</span><span class="stat-label">Android APK</span></div>
+        <div class="stat"><span class="stat-num">141.1</span><span class="stat-unit">KB</span><span class="stat-label">initial JS, gzipped</span></div>
+        <div class="stat"><span class="stat-num">0</span><span class="stat-unit"></span><span class="stat-label">trackers, accounts, network calls</span></div>
+      </div>
+      <div class="table-wrap">
+        <table class="compare">
+          <caption>How the category usually looks, and what we aimed for instead.</caption>
+          <thead>
+            <tr><th scope="col"></th><th scope="col">Quillote</th><th scope="col">Typical Electron note app</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Installer</th><td>5.2 MB</td><td>85 to 190 MB</td></tr>
+            <tr><th scope="row">Cold start</th><td>500 ms budget</td><td>Seconds</td></tr>
+            <tr><th scope="row">Mobile</th><td>iPhone and Android</td><td>Rare</td></tr>
+            <tr><th scope="row">Runtime</th><td>System webview + Rust</td><td>Bundled Chromium</td></tr>
+            <tr><th scope="row">Your files</th><td>Plain text on disk</td><td>Varies, often a database</td></tr>
+            <tr><th scope="row">Telemetry</th><td>None</td><td>Varies</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">Category ranges come from our October 2026 stack research. Quillote numbers are measured from the current build.</p>
+    </section>
+
+    <section class="section platforms" id="platforms" aria-labelledby="platforms-title">
+      <div class="section-head">
+        <p class="label"><span>05</span> Platforms</p>
+        <h2 id="platforms-title">One codebase. Five places to write.</h2>
+        <p class="lead">Tauri 2 shell, CodeMirror 6 core, vanilla TypeScript, a small Rust backend. The same file, the same modes, at a desk or in a pocket.</p>
+      </div>
+      <div class="platform-grid">
+        <article class="platform is-ready">
+          <div class="platform-top"><h3>macOS</h3><span class="status status-ready">Available</span></div>
+          <p>Universal beta, 5.2 MB DMG for Apple Silicon and Intel. Unsigned for now; right-click and Open the first time.</p>
+          <a class="text-link" href="assets/downloads/Quillote_0.1.0_universal.dmg" download>Download the DMG <span aria-hidden="true">↓</span></a>
+        </article>
+        <article class="platform">
+          <div class="platform-top"><h3>iPhone</h3><span class="status">Beta</span></div>
+          <p>Native iOS shell with the same three views, the formatting bar above the keyboard, and files copied into the app sandbox.</p>
+          <span class="platform-note">TestFlight next</span>
+        </article>
+        <article class="platform">
+          <div class="platform-top"><h3>Android</h3><span class="status">Beta</span></div>
+          <p>7.2 MB signed APK. Android ignores extension filters in the picker, so Quillote checks the file name before it copies anything.</p>
+          <a class="text-link" href="assets/downloads/Quillote_0.1.0_arm64.apk" download>Download the APK <span aria-hidden="true">↓</span></a>
+        </article>
+        <article class="platform">
+          <div class="platform-top"><h3>Windows</h3><span class="status status-later">From source</span></div>
+          <p>The same Tauri app and WebView2. CI-built MSI and NSIS installers are attached to the GitHub release; they are unsigned for now.</p>
+          <a class="text-link" href="https://github.com/eulogik/quillote-site/releases" rel="noopener">Get the installer <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="platform">
+          <div class="platform-top"><h3>Linux</h3><span class="status status-later">From source</span></div>
+          <p>WebKitGTK 4.1. AppImage, .deb and .rpm are built by CI from the same source and attached to the GitHub release.</p>
+          <a class="text-link" href="https://github.com/eulogik/quillote-site/releases" rel="noopener">Get a package <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="section-head">
+        <p class="label"><span>06</span> Answers</p>
+        <h2 id="faq-title">The questions people ask first.</h2>
+        <p class="lead">Short answers, no sales voice. If yours is missing, <a class="text-link" href="support/">the support page</a> has more.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What is Quillote?</summary>
+          <p>Quillote is a small code and Markdown editor for macOS, iPhone and Android. It has three views: Source, Live and Read. It is built for people who keep their work in files, not in someone else's database.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Quillote free?</summary>
+          <p>The public beta is free. Pricing for the 1.0 release has not been decided. If a paid tier arrives, the local editor stays usable without an account.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it work offline?</summary>
+          <p>Yes. Quillote opens files on your disk and needs no connection. A link you click opens in your browser.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it collect any data?</summary>
+          <p>No. There are no accounts, no analytics and no telemetry. The app does not check for updates in this beta. The only network request is a link you choose to open.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it support code, or only Markdown?</summary>
+          <p>Both. Markdown gets Source, Live and Read. Code files get Source, with syntax highlighting for around 100 languages, line numbers and a lazy-loaded grammar per language.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I use it on my phone?</summary>
+          <p>Yes. The iPhone and Android apps are in beta. The Android APK is signed and downloadable below; iPhone goes through TestFlight and the App Store. On mobile, a file you open copies into the app sandbox; edits leave through the share sheet. That is deliberate, because writing back to a picked provider URL is not reliable yet.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it support math and tables?</summary>
+          <p>Read mode renders tables and KaTeX math. Live mode styles headings, emphasis, code and links; tables and math stay as source, so nothing is hidden from the file. KaTeX loads only when a document needs it.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is it only 5.2 MB?</summary>
+          <p>It uses the system webview instead of bundling Chromium, ships no UI or editor fonts, and builds Rust with LTO, one codegen unit, stripping and panic=abort. The size budgets run in CI.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is the macOS build signed?</summary>
+          <p>Not yet. The public beta DMG is unsigned, so right-click the app and choose Open the first time. Signing and notarization are the next release step.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What about Windows and Linux?</summary>
+          <p>The same codebase builds on Windows and Linux. CI-built installers are attached to the GitHub release; they are unsigned for now. Windows users will see SmartScreen until a code-signing certificate is added.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="download-section" id="download" aria-labelledby="download-title">
+      <div class="download-card">
+        <div class="download-copy">
+          <p class="label"><span>07</span> Download</p>
+          <h2 id="download-title">Take the quiet way in.</h2>
+          <p class="lead">The macOS beta is a 5.2 MB universal DMG. Open it, drag Quillote to Applications, and write something. Android users can install the signed 7.2 MB APK. No sign-up, no onboarding flow, no sample document pretending to be yours.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="assets/downloads/Quillote_0.1.0_universal.dmg" download>Download for macOS <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="assets/downloads/Quillote_0.1.0_arm64.apk" download>Download for Android <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="changelog/">Read the changelog</a>
+          </div>
+          <p class="hero-note">Unsigned beta · Universal (Apple Silicon + Intel) · macOS 10.13+ · right-click Open the first time</p>
+          <p class="hash-line">DMG SHA-256 <code id="dmg-hash">185c2304af31ee032a6397316e05d6141f19e7db7063f0cd6a1431f6198384a7</code></p>
+          <p class="hash-line">APK SHA-256 <code>5c06b0cef231c5e87bb20f1cc36e68711a2af3ccbae6ddbc8075382dccf13272</code></p>
+        </div>
+        <div class="download-art" aria-hidden="true">
+          <img src="assets/img/quillote-mark.svg" alt="" width="260" height="260">
+          <span>Q</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-brand">
+        <a class="brand" href="./" aria-label="Quillote home"><img class="brand-mark" src="assets/img/quillote-mark.svg" alt="" width="30" height="30" aria-hidden="true"><span class="brand-word">Quillote</span></a>
+        <p>A tiny code and Markdown editor, built by <a href="https://eulogik.com" rel="noopener">Eulogik</a>. Made on a Mac, finished on a phone.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Product</h3>
+        <a href="#modes">Modes</a>
+        <a href="#speed">Speed</a>
+        <a href="#platforms">Platforms</a>
+        <a href="changelog/">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <a href="support/">Support</a>
+        <a href="privacy/">Privacy</a>
+        <a href="llms.txt">llms.txt</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+      <div class="footer-col">
+        <h3>Elsewhere</h3>
+        <a href="https://github.com/eulogik" rel="noopener">GitHub</a>
+        <a href="https://eulogik.com" rel="noopener">Eulogik</a>
+        <a href="mailto:hello@quillote.com">hello@quillote.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Eulogik. Quillote is a product of Eulogik.</p>
+      <p>No cookies. No analytics. No tracking pixels.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
