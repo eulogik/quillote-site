@@ -65,6 +65,21 @@
         <h2>Opening the macOS beta</h2>
         <p>The beta is unsigned. Drag Quillote into Applications, then right-click the app and choose <strong>Open</strong> once. After that, macOS remembers it. If the app still refuses to launch, check <code>System Settings → Privacy &amp; Security</code> for an Open Anyway button.</p>
 
+        <h2>Installing on Windows</h2>
+        <p>Run <code>Quillote_0.1.0_x64-setup.exe</code> (NSIS) or <code>Quillote_0.1.0_x64_en-US.msi</code>. The beta is unsigned, so SmartScreen will warn. Choose <strong>More info</strong>, then <strong>Run anyway</strong>. The MSI is the better choice for a managed or silent install; both install the same app.</p>
+
+        <h2>Installing on Linux</h2>
+        <p>The <code>.deb</code> and <code>.rpm</code> use the WebKitGTK that your distribution already ships, which is why they are under 3 MB. They are unsigned, so the package manager will warn about the missing repository signature. Use the command for your distribution:</p>
+        <pre><code># Debian, Ubuntu, Linux Mint, Pop!_OS
+sudo apt install ./Quillote_0.1.0_amd64.deb
+
+# Fedora, RHEL, CentOS Stream
+sudo dnf install ./Quillote-0.1.0-1.x86_64.rpm
+
+# openSUSE
+sudo zypper install ./Quillote-0.1.0-1.x86_64.rpm</code></pre>
+        <p>The AppImage is not shipped. Bundling WebKitGTK made it 82 MB, over the 10 MB installer budget. Flatpak and Snap are not in 0.1.0 either; they add a runtime and packaging maintenance that the first beta does not need. Arch users can try converting the <code>.rpm</code> with <code>debtap</code>, but that path is untested; a real AUR package waits for a real Arch test.</p>
+
         <h2>The phone file model</h2>
         <p>Phones do not hand apps a stable path they can write back to. Quillote copies a file you pick into its own sandbox, edits that copy, and exports through the share sheet. This is deliberate: it avoids the silent 0-byte writes that the content provider APIs can cause. Your original stays untouched until you export.</p>
 
