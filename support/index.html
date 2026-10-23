@@ -48,17 +48,17 @@
       <div class="page-hero">
         <p class="label"><span>Help</span> Support</p>
         <h1>How to get help.</h1>
-        <p class="lead">Quillote is in private beta. Start here for requirements and the file model. If something is still stuck, write to us.</p>
+        <p class="lead">Quillote is in public beta. Start here for requirements and the file model. If something is still stuck, write to us.</p>
         <p class="page-updated">Updated 23 October 2026</p>
       </div>
 
       <div class="prose">
         <h2>Requirements</h2>
         <ul>
-          <li><strong>macOS:</strong> Apple Silicon, macOS 11 or later. The current beta DMG is not signed or notarized.</li>
-          <li><strong>iPhone:</strong> iOS 15 or later. Beta builds are installed through Xcode or TestFlight.</li>
-          <li><strong>Android:</strong> Android 7.0 (API 24) or later. Beta builds are signed for testing.</li>
-          <li><strong>Windows and Linux:</strong> build from source with Tauri 2 and the platform webview.</li>
+          <li><strong>macOS:</strong> Universal build for Apple Silicon and Intel, macOS 10.13 or later. The current beta DMG is not signed or notarized.</li>
+          <li><strong>iPhone:</strong> iOS 15 or later. The App Store build and TestFlight are the next step.</li>
+          <li><strong>Android:</strong> Android 7.0 (API 24) or later. The signed APK is available on the download page; Play Store rollout is next.</li>
+          <li><strong>Windows and Linux:</strong> CI-built installers are attached to the GitHub release. They are unsigned for now.</li>
         </ul>
 
         <h2>Opening the macOS beta</h2>
@@ -69,9 +69,9 @@
 
         <h2>Known issues</h2>
         <ul>
-          <li>The macOS DMG is unsigned in the beta. Signing and notarization are planned before the public release.</li>
-          <li>Windows and Linux installers are not published yet. The source builds are the path for now.</li>
-          <li>The iPhone build needs a granted development profile; it is not a TestFlight build yet.</li>
+          <li>The macOS DMG is unsigned in the public beta. Developer ID signing and notarization are the next step.</li>
+          <li>Windows and Linux installers are CI-built and unsigned. A native smoke test on each platform is still on the list.</li>
+          <li>The iPhone build is App Store-signed; TestFlight and App Store review are the next step.</li>
           <li>On Android, the system picker ignores extension filters. Quillote checks the picked file name before it copies anything and refuses binary files.</li>
           <li>Toggling word wrap or line numbers rebuilds the active view. The text and selection survive; the undo history for that document does not.</li>
         </ul>
@@ -82,7 +82,7 @@
       </div>
 
       <div class="page-cta">
-        <a class="btn btn-gold" href="../#download">Download for macOS</a>
+        <a class="btn btn-gold" href="../#download">Download Quillote</a>
         <a class="btn btn-ghost" href="../privacy/">Privacy</a>
       </div>
     </div>

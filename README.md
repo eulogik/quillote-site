@@ -48,17 +48,17 @@ Then add `quillote.com` in the Pages settings, wait for the DNS check, and enabl
 - `assets/js/site.js`: the mobile menu and the accessible demo tabs. About 2 KB.
 - `assets/fonts/`: Instrument Serif and Inter, with their licenses. No external font requests.
 - `assets/img/`: the mark, app screenshots, icons and the 1200 x 630 social card.
-- `assets/downloads/`: the current macOS beta DMG. When the app changes, replace this file and update the SHA-256 in `index.html` (the `dmg-hash` element).
+- `assets/downloads/`: the universal macOS beta DMG and the signed Android APK. When the app changes, replace both, then update the SHA-256 lines in `index.html` and this README.
 - `llms.txt` and `index.md`: the AI-readable summary and Markdown mirror.
 - `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.nojekyll`.
 
 ## Copy rules
 
-The product is in private beta. Keep the copy honest:
+The product is in public beta. Keep the copy honest:
 
-- The macOS build is unsigned and Apple Silicon only. Say so.
-- iPhone and Android are beta; do not offer a download that does not exist.
-- Windows and Linux are build-from-source until installers ship.
+- The macOS build is unsigned and universal (Apple Silicon + Intel). Say so.
+- The Android APK is signed and downloadable. The iPhone build is App Store-signed; do not claim it is live in the App Store until it is.
+- Windows and Linux installers are CI-built and unsigned. Only link them once the release workflow is green.
 - The size numbers are measured. Update them only from a real build, and keep the footnote about the category ranges.
 - No em dashes. No growth-hack language. Short sentences, concrete claims.
 

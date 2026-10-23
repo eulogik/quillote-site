@@ -1,17 +1,18 @@
 # Quillote
 
-A tiny code and Markdown editor for macOS, iPhone and Android, with Windows and Linux buildable from the same codebase. The private beta is 0.1.0.
+A tiny code and Markdown editor for macOS, iPhone and Android, with Windows and Linux built from the same codebase. The public beta is 0.1.0. Live mode is the hook: headings, emphasis, code and links style themselves in the buffer you are typing in, while the Markdown stays on disk.
 
 - Site: https://quillote.com
 - Built by: [Eulogik](https://eulogik.com)
-- Status: private beta, free
-- Install: macOS DMG (2.7 MB, Apple Silicon), Android APK (7.2 MB), iOS beta
+- Status: public beta, free
+- Install: macOS universal DMG (5.2 MB, Apple Silicon + Intel), signed Android APK (7.2 MB), iOS App Store build (TestFlight next)
+- Release: https://github.com/eulogik/quillote-site/releases/latest
 
 ## What it is
 
 Quillote opens local plain-text files. Markdown gets three views: Source, Live and Read. Code files get Source, with syntax highlighting for around 100 languages. There is no account, no analytics and no telemetry.
 
-The app uses the system webview instead of bundling Chromium. That is why the macOS DMG is 2.7 MB and the Android APK is 7.2 MB. The initial JavaScript is 136.5 KB gzipped. The size budgets are enforced in CI.
+The app uses the system webview instead of bundling Chromium. That is why the universal macOS DMG is 5.2 MB and the Android APK is 7.2 MB. The initial JavaScript is 141.1 KB gzipped and the app CSS is 4.9 KB. The size budgets are enforced in CI.
 
 ## The three views
 
@@ -32,10 +33,10 @@ The app uses the system webview instead of bundling Chromium. That is why the ma
 
 ## Platforms
 
-- macOS: Apple Silicon, macOS 11+. The beta DMG is unsigned; right-click and Open the first time.
-- iPhone: iOS 15+. Beta. TestFlight next.
-- Android: Android 7.0 (API 24)+. Beta.
-- Windows and Linux: the same Tauri codebase; public installers not ready yet.
+- macOS: universal (Apple Silicon + Intel), macOS 10.13+. The beta DMG is unsigned; right-click and Open the first time.
+- iPhone: iOS 15+. App Store-signed; TestFlight and App Store review next.
+- Android: Android 7.0 (API 24)+. The signed APK is available now; Play Store rollout next.
+- Windows and Linux: the same Tauri codebase; CI-built installers are attached to the GitHub release. They are unsigned in the beta.
 
 ## Phone file model
 
@@ -49,7 +50,7 @@ A small code and Markdown editor with Source, Live and Read views. It is built f
 
 ### Is it free?
 
-The private beta is free. Pricing for 1.0 has not been decided.
+The public beta is free. Pricing for 1.0 has not been decided.
 
 ### Does it work offline?
 
@@ -71,9 +72,9 @@ Read mode renders tables and KaTeX math. Live mode keeps tables and math as sour
 
 Yes. The iPhone and Android apps are in beta. Files copy into the app sandbox and leave through the share sheet.
 
-### How is it only 2.7 MB?
+### How is it only 5.2 MB?
 
-It uses the system webview instead of bundling Chromium, ships no UI or editor fonts, and uses a size-tuned Rust release profile. The budgets run in CI.
+It uses the system webview instead of bundling Chromium, ships no UI or editor fonts, and uses a size-tuned Rust release profile. The universal DMG is 5.2 MB. The budgets run in CI.
 
 ### Is the macOS build signed?
 
