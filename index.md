@@ -14,6 +14,7 @@ A tiny code and Markdown editor for macOS, iPhone and Android, with Windows and 
 - [Markdown editor for iPhone and Android](https://quillote.com/markdown-editor-for-iphone/)
 - [Markdown with LaTeX math](https://quillote.com/markdown-editor-with-latex/)
 - [Quillote vs Typora](https://quillote.com/typora-alternative/)
+- [Press kit](https://quillote.com/press/)
 
 ## What it is
 
@@ -43,7 +44,7 @@ The app uses the system webview instead of bundling Chromium. That is why the un
 - macOS: universal (Apple Silicon + Intel), macOS 10.13+. The beta DMG is unsigned; right-click and Open the first time.
 - iPhone: iOS 15+. App Store-signed; TestFlight and App Store review next.
 - Android: Android 7.0 (API 24)+. The signed APK is available now; Play Store rollout next.
-- Windows and Linux: the same Tauri codebase; CI-built installers are attached to the GitHub release. They are unsigned in the beta. Linux ships .deb and .rpm; the AppImage is over the 10 MB budget and is not shipped.
+- Windows and Linux: the same Tauri codebase; CI-built installers are attached to the GitHub release. They are unsigned in the beta. Windows NSIS and MSI are 2.1 MB and 2.6 MB. Linux ships .deb and .rpm; the AppImage is over the 10 MB budget and is not shipped.
 
 ## Phone file model
 

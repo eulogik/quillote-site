@@ -17,7 +17,7 @@ Key facts:
 - Read mode renders tables and KaTeX math. Live mode styles headings, emphasis, code and links; tables and math remain source.
 - Themes: Night (default, ink and gold) and Ink (warm parchment). System is an explicit option.
 - Crash snapshots every five seconds while the buffer is dirty. Autosave is off on desktop and on for mobile.
-- Windows and Linux installers are built in CI and attached to the GitHub release. They are unsigned in the beta. Linux ships .deb and .rpm; the AppImage exceeds the 10 MB installer budget and is not shipped.
+- Windows and Linux installers are built in CI and attached to the GitHub release. They are unsigned in the beta. Windows NSIS and MSI are 2.1 MB and 2.6 MB. Linux ships .deb and .rpm; the AppImage exceeds the 10 MB installer budget and is not shipped.
 - Mobile file model: a picked file is copied into the app sandbox and leaves through the share sheet.
 
 ## Pages
@@ -30,6 +30,7 @@ Key facts:
 - [Markdown editor for iPhone and Android](https://quillote.com/markdown-editor-for-iphone/): the mobile file model, the signed APK, and the App Store build.
 - [Markdown with LaTeX math](https://quillote.com/markdown-editor-with-latex/): KaTeX in Read, lazy loaded and offline.
 - [Quillote vs Typora](https://quillote.com/typora-alternative/): a fair comparison, including where Typora is stronger.
+- [Press kit](https://quillote.com/press/): facts, founder quote, logo, screenshots and a Live mode video.
 - [Markdown version of the home page](https://quillote.com/index.md)
 - [GitHub release](https://github.com/eulogik/quillote-site/releases/latest)
 
