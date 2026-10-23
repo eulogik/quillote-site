@@ -30,7 +30,7 @@
   &nbsp;·&nbsp;
   <a href="https://eulogik.github.io/quillote-site/">Website</a>
   &nbsp;·&nbsp;
-  <a href="https://quillote.com">quillote.com</a>
+  <a href="https://eulogik.github.io/quillote-site/">Live preview</a>
 </p>
 
 <p align="center">
@@ -61,7 +61,7 @@ The file on disk is always `.md` or plain text. No database, no proprietary docu
 | **Windows** | GitHub release | CI-built NSIS and MSI installers, 2.1 MB and 2.6 MB. Unsigned; expect SmartScreen. |
 | **Linux** | GitHub release | CI-built `.deb` and `.rpm`, 2.9 MB each. Unsigned. No AppImage: bundling WebKitGTK made it 82 MB. |
 
-The [latest release](https://github.com/eulogik/quillote-site/releases/latest) has the files and SHA-256 checksums. The site is at [quillote.com](https://quillote.com), with a preview at [eulogik.github.io/quillote-site](https://eulogik.github.io/quillote-site/).
+The [latest release](https://github.com/eulogik/quillote-site/releases/latest) has the files and SHA-256 checksums. The site is live at [eulogik.github.io/quillote-site](https://eulogik.github.io/quillote-site/). The custom domain is [quillote.com](https://quillote.com) once the DNS records are set.
 
 ## Screenshots
 
@@ -203,8 +203,8 @@ The beta is signed ad hoc for local testing. A Developer ID certificate and nota
 
 ## Credits
 
-Built by [Eulogik](https://eulogik.com). Site: [quillote.com](https://quillote.com). The editor is [CodeMirror](https://codemirror.net), the Markdown renderer is [markdown-it](https://github.com/markdown-it/markdown-it), the math is [KaTeX](https://katex.org), and the shell is [Tauri](https://tauri.app). No UI or editor fonts are bundled; Quillote uses the platform's fonts.
+Built by [Eulogik](https://eulogik.com). Site: [eulogik.github.io/quillote-site](https://eulogik.github.io/quillote-site/). The editor is [CodeMirror](https://codemirror.net), the Markdown renderer is [markdown-it](https://github.com/markdown-it/markdown-it), the math is [KaTeX](https://katex.org), and the shell is [Tauri](https://tauri.app). No UI or editor fonts are bundled; Quillote uses the platform's fonts.
 
 <p align="center">
-  <a href="https://quillote.com">quillote.com</a>
+  <a href="https://eulogik.github.io/quillote-site/">Live preview</a>
 </p>
