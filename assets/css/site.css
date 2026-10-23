@@ -1712,6 +1712,40 @@ h2 {
   font-size: 0.85em;
   color: #d8d1c2;
 }
+.prose table {
+  width: 100%;
+  margin: 24px 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.prose th,
+.prose td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.prose th {
+  color: #f2ede2;
+  font-weight: 600;
+}
+.prose td {
+  color: #9e9788;
+}
+.prose pre {
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0d1118;
+  overflow-x: auto;
+}
+.prose pre code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 0.82rem;
+}
 .prose blockquote {
   margin: 22px 0;
   padding-left: 18px;

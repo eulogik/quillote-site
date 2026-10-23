@@ -58,7 +58,7 @@ The product is in public beta. Keep the copy honest:
 
 - The macOS build is unsigned and universal (Apple Silicon + Intel). Say so.
 - The Android APK is signed and downloadable. The iPhone build is App Store-signed; do not claim it is live in the App Store until it is.
-- Windows and Linux installers are CI-built and unsigned. Only link them once the release workflow is green.
+- Windows and Linux installers are CI-built and unsigned. Only link them once the release workflow is green. Linux ships .deb and .rpm; the AppImage is over the 10 MB budget and is not shipped.
 - The size numbers are measured. Update them only from a real build, and keep the footnote about the category ranges.
 - No em dashes. No growth-hack language. Short sentences, concrete claims.
 

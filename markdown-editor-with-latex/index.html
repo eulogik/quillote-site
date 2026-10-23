@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Markdown with LaTeX math: Quillote, with KaTeX in Read</title>
+  <meta name="description" content="Write Markdown with inline and block LaTeX math in Quillote. Read renders it with KaTeX, lazy loaded and offline. The source stays in the same file.">
+  <link rel="canonical" href="https://quillote.com/markdown-editor-with-latex/">
+  <meta name="theme-color" content="#0b0d11">
+  <meta name="color-scheme" content="dark">
+  <meta name="author" content="Eulogik">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quillote">
+  <meta property="og:title" content="Markdown with LaTeX math: Quillote, with KaTeX in Read">
+  <meta property="og:description" content="Write Markdown with inline and block LaTeX math in Quillote. Read renders it with KaTeX, lazy loaded and offline. The source stays in the same file.">
+  <meta property="og:url" content="https://quillote.com/markdown-editor-with-latex/">
+  <meta property="og:image" content="https://quillote.com/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markdown with LaTeX math: Quillote, with KaTeX in Read">
+  <meta name="twitter:description" content="Write Markdown with inline and block LaTeX math in Quillote. Read renders it with KaTeX, lazy loaded and offline. The source stays in the same file.">
+  <meta name="twitter:image" content="https://quillote.com/assets/img/og.jpg">
+  <link rel="icon" href="../assets/img/quillote-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="describedby" href="../llms.txt" type="text/plain">
+  <link rel="preload" href="../assets/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://quillote.com/markdown-editor-with-latex/", "url": "https://quillote.com/markdown-editor-with-latex/", "name": "Markdown with LaTeX math: Quillote, with KaTeX in Read", "description": "Write Markdown with inline and block LaTeX math in Quillote. Read renders it with KaTeX, lazy loaded and offline. The source stays in the same file.", "isPartOf": {"@id": "https://quillote.com/#website"}, "about": {"@id": "https://quillote.com/#app"}, "primaryImageOfPage": "https://quillote.com/assets/img/og.jpg", "datePublished": "2026-10-23", "dateModified": "2026-10-23"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Quillote", "item": "https://quillote.com/"}, {"@type": "ListItem", "position": 2, "name": "Markdown with LaTeX math: Quillote, with KaTeX in Read", "item": "https://quillote.com/markdown-editor-with-latex/"}]}, {"@type": "FAQPage", "@id": "https://quillote.com/markdown-editor-with-latex/#faq", "mainEntity": [{"@type": "Question", "name": "Does Quillote render LaTeX?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in Read mode. Inline and block math render through KaTeX. Live keeps the math as source; Read shows the page."}}, {"@type": "Question", "name": "Is it MathJax or KaTeX?", "acceptedAnswer": {"@type": "Answer", "text": "KaTeX. It is a lazy chunk and ships woff2 fonts only, so the math code does not load until a document needs it."}}, {"@type": "Question", "name": "Does it work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The math renderer and fonts are local. No network request is made for a formula."}}, {"@type": "Question", "name": "Can I write code and math in the same file?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Markdown can hold fenced code blocks and KaTeX math. Read renders both; the source stays in the same file."}}, {"@type": "Question", "name": "Does PDF export keep the math?", "acceptedAnswer": {"@type": "Answer", "text": "The macOS PDF capture prints the rendered page, so the math is part of the output. Older macOS versions use the print dialog's Save as PDF."}}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../" aria-label="Quillote home"><img class="brand-mark" src="../assets/img/quillote-mark.svg" alt="" width="30" height="30" aria-hidden="true"><span class="brand-word">Quillote</span></a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span><span class="visually-hidden">Menu</span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../#modes">Modes</a>
+        <a href="../#file">The file</a>
+        <a href="../#speed">Speed</a>
+        <a href="../#platforms">Platforms</a>
+        <a href="../typora-alternative/">Compare</a>
+        <a href="../#faq">FAQ</a>
+        <a class="nav-cta" href="../#download">Download <span aria-hidden="true">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-main">
+    <div class="page-shell">
+      <div class="page-hero">
+        <p class="label"><span>Math</span> Markdown and LaTeX</p>
+        <h1>Markdown with LaTeX math, in the same file.</h1>
+        <p class="lead">Write inline and block math in Markdown. Read renders it with KaTeX; the math chunk loads only when the document needs it. Live keeps the formula as source, so nothing is hidden.</p>
+        <p class="page-updated">Updated 23 October 2026</p>
+      </div>
+      <div class="prose">
+
+<h2>Math in the file, not in a separate tool</h2>
+<p>Quillote reads Markdown with inline and block math. Write <code>$E = mc^2$</code> in a paragraph, or a block between <code>$$</code> markers. Read renders it with KaTeX. There is no export step to a separate equation editor.</p>
+<pre><code>Inline: $E = mc^2$
+
+Block:
+$$
+\int_0^1 x^2 \, dx = \frac{1}{3}
+$$</code></pre>
+
+<h2>Read renders it. Live keeps the source.</h2>
+<p>Live mode styles headings, emphasis, code and links, but it does not render math. The formula stays as source in the buffer. Switch to Read and the page renders with KaTeX, tables and images. That is the same file, one key away.</p>
+<p>If you want math rendered while you type, a full WYSIWYG editor is a better fit. Quillote chooses the source-first trade: the formula is always readable as text, and the rendered page is one view away.</p>
+
+<h2>Why KaTeX is lazy</h2>
+<p>Math is a separate chunk. It loads only when a document contains it, and the fonts are woff2 only. A note without math never pays for the renderer. The app works offline; the formula does not make a network request.</p>
+
+<h2>Math and code together</h2>
+<p>A Markdown file can hold a proof, a code fence and a table. Quillote opens it in Source, styles the headings and code in Live, and renders the math and tables in Read. Code files get Source with syntax highlighting; Markdown gets all three views.</p>
+
+<h2>Questions</h2>
+<h3>Does Quillote render LaTeX?</h3>
+<p>Yes, in Read mode. Inline and block math render through KaTeX. Live keeps the math as source; Read shows the page.</p>
+<h3>Is it MathJax or KaTeX?</h3>
+<p>KaTeX. It is a lazy chunk and ships woff2 fonts only, so the math code does not load until a document needs it.</p>
+<h3>Does it work offline?</h3>
+<p>Yes. The math renderer and fonts are local. No network request is made for a formula.</p>
+<h3>Can I write code and math in the same file?</h3>
+<p>Yes. Markdown can hold fenced code blocks and KaTeX math. Read renders both; the source stays in the same file.</p>
+<h3>Does PDF export keep the math?</h3>
+<p>The macOS PDF capture prints the rendered page, so the math is part of the output. Older macOS versions use the print dialog's Save as PDF.</p>
+      </div>
+      <div class="page-cta">
+        <a class="btn btn-gold" href="../#download">Download the beta</a>
+        <a class="btn btn-ghost" href="../support/">Support</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-brand">
+        <a class="brand" href="../" aria-label="Quillote home"><img class="brand-mark" src="../assets/img/quillote-mark.svg" alt="" width="30" height="30" aria-hidden="true"><span class="brand-word">Quillote</span></a>
+        <p>A tiny code and Markdown editor, built by <a href="https://eulogik.com" rel="noopener">Eulogik</a>. Made on a Mac, finished on a phone.</p>
+      </div>
+      <div class="footer-col"><h3>Product</h3><a href="../#modes">Modes</a><a href="../#speed">Speed</a><a href="../#platforms">Platforms</a><a href="../changelog/">Changelog</a></div>
+      <div class="footer-col"><h3>Resources</h3><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../markdown-editor-for-mac/">Mac editor</a><a href="../markdown-editor-for-iphone/">iPhone and Android</a><a href="../markdown-editor-with-latex/">LaTeX math</a><a href="../typora-alternative/">Typora alternative</a></div>
+      <div class="footer-col"><h3>Elsewhere</h3><a href="https://github.com/eulogik" rel="noopener">GitHub</a><a href="https://eulogik.com" rel="noopener">Eulogik</a><a href="mailto:hello@quillote.com">hello@quillote.com</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Eulogik. Quillote is a product of Eulogik.</p><p>No cookies. No analytics. No tracking pixels.</p></div>
+  </footer>
+  <script src="../assets/js/site.js" defer></script>
+</body>
+</html>
