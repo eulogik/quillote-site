@@ -30,7 +30,7 @@
   &nbsp;·&nbsp;
   <a href="https://quillote.com/">Website</a>
   &nbsp;·&nbsp;
-  <a href="https://quillote.com/">Website</a>
+  <a href="https://quillote.com/changelog/">Changelog</a>
 </p>
 
 <p align="center">
