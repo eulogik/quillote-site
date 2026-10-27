@@ -1,7 +1,7 @@
 {
   "name": "Quillote",
   "short_name": "Quillote",
-  "description": "A tiny code and Markdown editor with live preview.",
+  "description": "A tiny code and Markdown editor with Source, Live and Read.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0b0d11",

@@ -1,11 +1,11 @@
 # Quillote
 
-A tiny code and Markdown editor for macOS, iPhone and Android, with Windows and Linux built from the same codebase. The public beta is 0.1.0. Live mode is the hook: headings, emphasis, code and links style themselves in the buffer you are typing in, while the Markdown stays on disk.
+A tiny code and Markdown editor for macOS, iPhone and Android, with Windows and Linux built from the same codebase. The public beta is 0.1.3. Live mode is the hook: headings, emphasis, code and links style themselves in the buffer you are typing in, while the Markdown stays on disk.
 
 - Site: https://quillote.com
 - Built by: [Eulogik](https://eulogik.com)
-- Status: public beta, free
-- Install: macOS universal DMG (5.2 MB, Apple Silicon + Intel), signed Android APK (7.2 MB), iOS App Store build (TestFlight next)
+- Status: public beta, free ($0, no paid tier)
+- Install: macOS universal DMG (5.2 MB, Apple Silicon + Intel), signed Android APK (7.2 MB), iOS App Store build (0.1.0 in review, 0.1.3 update uploaded)
 - Release: https://github.com/eulogik/quillote-site/releases/latest
 
 ## Guides
@@ -20,7 +20,7 @@ A tiny code and Markdown editor for macOS, iPhone and Android, with Windows and 
 
 Quillote opens local plain-text files. Markdown gets three views: Source, Live and Read. Code files get Source, with syntax highlighting for around 100 languages. There is no account, no analytics and no telemetry.
 
-The app uses the system webview instead of bundling Chromium. That is why the universal macOS DMG is 5.2 MB and the Android APK is 7.2 MB. The initial JavaScript is 141.1 KB gzipped and the app CSS is 4.9 KB. The size budgets are enforced in CI.
+The app uses the system webview instead of bundling Chromium. That is why the universal macOS DMG is 5.2 MB and the Android APK is 7.2 MB. The initial JavaScript is 141.7 KB gzipped and the app CSS is 5.0 KB. The size budgets are enforced in CI.
 
 ## The three views
 
@@ -42,13 +42,13 @@ The app uses the system webview instead of bundling Chromium. That is why the un
 ## Platforms
 
 - macOS: universal (Apple Silicon + Intel), macOS 10.13+. The beta DMG is unsigned; right-click and Open the first time.
-- iPhone: iOS 15+. App Store-signed; TestFlight and App Store review next.
+- iPhone: iOS 15+. The 0.1.0 build is in App Store review; the 0.1.3 update is uploaded to App Store Connect.
 - Android: Android 7.0 (API 24)+. The signed APK is available now; Play Store rollout next.
 - Windows and Linux: the same Tauri codebase; CI-built installers are attached to the GitHub release. They are unsigned in the beta. Windows NSIS and MSI are 2.1 MB and 2.6 MB. Linux ships .deb and .rpm; the AppImage is over the 10 MB budget and is not shipped.
 
 ## Phone file model
 
-Phones do not provide a stable path that apps can write back to reliably. Quillote copies a picked file into its own sandbox, edits the copy, and exports through the share sheet. The original stays where it was.
+Phones do not provide a stable path that apps can write back to reliably. Quillote copies a picked file into its own sandbox and edits the copy. A new file saves in the same folder and reopens from Recents. The original stays where it was.
 
 ## FAQ
 
@@ -58,7 +58,7 @@ A small code and Markdown editor with Source, Live and Read views. It is built f
 
 ### Is it free?
 
-The public beta is free. Pricing for 1.0 has not been decided.
+Yes. Quillote is free. There is no paid tier, no subscription and no account.
 
 ### Does it work offline?
 
@@ -78,7 +78,7 @@ Read mode renders tables and KaTeX math. Live mode keeps tables and math as sour
 
 ### Can I use it on my phone?
 
-Yes. The iPhone and Android apps are in beta. Files copy into the app sandbox and leave through the share sheet.
+Yes. The Android APK is available now; the iPhone 0.1.0 build is in App Store review. Files copy into the app sandbox, and new files reopen from Recents. Share-sheet export is the next mobile update.
 
 ### How is it only 5.2 MB?
 
@@ -90,7 +90,7 @@ Not yet. The beta DMG is unsigned; right-click the app and choose Open the first
 
 ### What about Windows and Linux?
 
-The same codebase builds there. Public installers are not ready yet.
+The same codebase builds there. CI-built and unsigned, they are attached to the latest GitHub release: Windows NSIS and MSI, Linux .deb and .rpm.
 
 ## Links
 

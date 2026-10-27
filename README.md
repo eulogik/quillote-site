@@ -19,18 +19,18 @@
 </p>
 
 <p align="center">
-  <img alt="277 frontend tests and 26 Rust tests" src="https://img.shields.io/badge/tests-277%20%2B%2026-brightgreen?style=flat-square">
+  <img alt="288 frontend tests and 26 Rust tests" src="https://img.shields.io/badge/tests-288%20%2B%2026-brightgreen?style=flat-square">
   <img alt="Universal macOS installer: 5.2 MB" src="https://img.shields.io/badge/macOS%20DMG-5.2%20MB-blue?style=flat-square">
-  <img alt="Initial JavaScript: 141.1 KB gzipped" src="https://img.shields.io/badge/initial%20JS-141.1%20KB%20gz-6f42c1?style=flat-square">
+  <img alt="Initial JavaScript: 141.7 KB gzipped" src="https://img.shields.io/badge/initial%20JS-141.7%20KB%20gz-6f42c1?style=flat-square">
   <img alt="Proprietary license" src="https://img.shields.io/badge/license-proprietary-lightgrey?style=flat-square">
 </p>
 
 <p align="center">
   <a href="https://github.com/eulogik/quillote-site/releases/latest"><strong>Download the beta</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://eulogik.github.io/quillote-site/">Website</a>
+  <a href="https://quillote.com/">Website</a>
   &nbsp;·&nbsp;
-  <a href="https://eulogik.github.io/quillote-site/">Live preview</a>
+  <a href="https://quillote.com/">Website</a>
 </p>
 
 <p align="center">
@@ -57,11 +57,11 @@ The file on disk is always `.md` or plain text. No database, no proprietary docu
 | --- | --- | --- |
 | **macOS** | [Universal DMG, 5.2 MB](https://github.com/eulogik/quillote-site/releases/latest) | Apple Silicon + Intel, macOS 10.13+. Unsigned beta: right-click the app and choose Open the first time. |
 | **Android** | [Signed APK, 7.2 MB](https://github.com/eulogik/quillote-site/releases/latest) | Android 7.0 (API 24)+, arm64. Sideload the APK; Play Store rollout is next. |
-| **iPhone** | App Store build, signed | The archive is App Store-signed. TestFlight and App Store review are the next step. |
+| **iPhone** | [App Store review](https://quillote.com/) | The 0.1.0 build is in review. The 0.1.3 update is uploaded to App Store Connect. |
 | **Windows** | GitHub release | CI-built NSIS and MSI installers, 2.1 MB and 2.6 MB. Unsigned; expect SmartScreen. |
 | **Linux** | GitHub release | CI-built `.deb` and `.rpm`, 2.9 MB each. Unsigned. No AppImage: bundling WebKitGTK made it 82 MB. |
 
-The [latest release](https://github.com/eulogik/quillote-site/releases/latest) has the files and SHA-256 checksums. The site is live at [eulogik.github.io/quillote-site](https://eulogik.github.io/quillote-site/). The custom domain is [quillote.com](https://quillote.com) once the DNS records are set.
+The [latest release](https://github.com/eulogik/quillote-site/releases/latest) has the files and SHA-256 checksums. The site is live at [quillote.com](https://quillote.com/).
 
 ## Screenshots
 
@@ -86,9 +86,9 @@ The [latest release](https://github.com/eulogik/quillote-site/releases/latest) h
 
 - **One file, three views.** `Cmd/Ctrl+1`, `2`, `3`. The file never changes format. There is no split view to manage and no preview pane to sync.
 - **A real editor.** CodeMirror 6, around 100 languages, line numbers, word wrap, language override, and a lazy grammar chunk per language. Markdown gets the same editor, not a textarea.
-- **Small on purpose.** The universal macOS DMG is 5.2 MB. The initial JavaScript is 141.1 KB gzipped. The app CSS is 4.9 KB. Those are hard gates in the build, not launch-day claims.
+- **Small on purpose.** The universal macOS DMG is 5.2 MB. The initial JavaScript is 141.7 KB gzipped. The app CSS is 5.0 KB. Those are hard gates in the build, not launch-day claims.
 - **Local by default.** No account, no analytics, no telemetry, no background network calls. Files stay in plain text on your disk.
-- **The phone is a first-class target.** The same three views, a formatting bar above the keyboard, a file copied into the app sandbox, and edits exported through the share sheet. No write-back to a provider URL that might silently fail.
+- **The phone is a first-class target.** The same three views, a formatting bar above the keyboard, and a file copied into the app sandbox. A new file saves in the same folder and reopens from Recents. No write-back to a provider URL that might silently fail.
 - **Built for the machine.** The system webview instead of bundled Chromium. A size-tuned Rust release profile. Keyboard-first on the desktop, touch-sized on the phone.
 
 ## Numbers that are gates
@@ -97,8 +97,8 @@ Every number is measured by `node scripts/check-size.mjs` and enforced in CI.
 
 | Gate | Current | Limit |
 | --- | ---: | ---: |
-| Initial JS (entry chunk) | 141.1 KB gz | 200 KB gz |
-| App CSS | 4.9 KB gz | 12 KB gz |
+| Initial JS (entry chunk) | 141.7 KB gz | 200 KB gz |
+| App CSS | 5.0 KB gz | 12 KB gz |
 | Read renderer chunk | 39.8 KB gz | 60 KB gz |
 | Largest other lazy chunk | 33.5 KB gz | 80 KB gz |
 | KaTeX class, raw | 383.1 KB | 500 KB |
@@ -108,7 +108,7 @@ Every number is measured by `node scripts/check-size.mjs` and enforced in CI.
 | Windows NSIS / MSI | 2.1 MB / 2.6 MB | 10 MB |
 | iOS IPA | 3.4 MB | 15 MB |
 
-The tests: **277 frontend tests** in 19 files and **26 Rust tests**. `pnpm test`, `cargo test`, `tsc --noEmit` and Biome all run in CI.
+The tests: **288 frontend tests** in 20 files and **26 Rust tests**. `pnpm test`, `cargo test`, `tsc --noEmit` and Biome all run in CI.
 
 ## Site development
 
@@ -132,9 +132,9 @@ git commit -m "site: update"
 git push
 ```
 
-A push to `main` runs `.github/workflows/pages.yml` and publishes with GitHub Pages. The preview is `https://eulogik.github.io/quillote-site/`. The custom domain is `https://quillote.com` once the DNS records are set.
+A push to `main` publishes with GitHub Pages from the repository root. The site is live at `https://quillote.com`, with `https://eulogik.github.io/quillote-site/` still serving as the GitHub address.
 
-At the registrar: apex `quillote.com` gets A records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`; `www` gets a CNAME to `eulogik.github.io`. Then set `quillote.com` as the custom domain in the repository Pages settings and enable Enforce HTTPS.
+The apex `quillote.com` points at GitHub Pages with A records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`; `www` gets a CNAME to `eulogik.github.io`. The custom domain and Enforce HTTPS are set in the repository Pages settings.
 
 Site details:
 
@@ -147,7 +147,7 @@ Site details:
 - `assets/downloads/`: the universal macOS beta DMG, the signed Android APK and the press kit.
 - `llms.txt`, `index.md`, `robots.txt`, `sitemap.xml`: the AI-readable summary, Markdown mirror and crawler files.
 
-Site copy rules: the macOS build is unsigned and universal, the Android APK is signed, the iPhone build is App Store-signed but not live in the App Store yet, and Windows/Linux are CI-built and unsigned. Do not claim a store listing is public before it is.
+Site copy rules: the macOS build is unsigned and universal, the Android APK is signed, the iPhone 0.1.0 build is in App Store review and not public yet, and Windows/Linux are CI-built and unsigned. Do not claim a store listing is public before it is. Mobile files save in the app sandbox; do not claim share-sheet export until it ships.
 
 ## Under the hood
 
@@ -173,7 +173,7 @@ The app source and the design notes stay private during the beta. This repositor
 
 ## Privacy
 
-No account, no analytics, no telemetry, no crash reporting service. Editing works offline. The only network request is the one your browser makes when you open a link from a document. On mobile, a picked file is copied into the app sandbox; export goes through the system share sheet. Crash snapshots and preferences stay in the app's own data folder. Read the [privacy page](https://eulogik.github.io/quillote-site/privacy/).
+No account, no analytics, no telemetry, no crash reporting service. Editing works offline. The only network request is the one your browser makes when you open a link from a document. On mobile, a picked file is copied into the app sandbox. A new file saves in the same folder and reopens from Recents; share-sheet export is the next mobile update. Crash snapshots and preferences stay in the app's own data folder. Read the [privacy page](https://quillote.com/privacy/).
 
 ## FAQ
 
@@ -183,7 +183,7 @@ No. The source is private during the public beta. The site repository is public;
 
 ### Is the beta free?
 
-Yes. Pricing for 1.0 has not been decided. There is no paid tier or subscription inside the beta.
+Yes. Quillote is free. There is no paid tier, subscription or in-app purchase.
 
 ### Does Live render tables and math?
 
@@ -195,7 +195,7 @@ Yes. The current DMG is universal: Apple Silicon and Intel, macOS 10.13 or later
 
 ### Can I use it on my phone?
 
-Yes. The Android APK is signed and downloadable now. The iPhone app is App Store-signed and heading to TestFlight and the App Store. On both, a file you open copies into the app sandbox and leaves through the share sheet.
+Yes. The Android APK is signed and downloadable now. The iPhone 0.1.0 build is in App Store review; the 0.1.3 update is uploaded to App Store Connect. On both, a file you open copies into the app sandbox. A new file saves in the same folder and reopens from Recents. Share-sheet export is the next mobile update.
 
 ### Why is the Mac app not notarized?
 
@@ -203,8 +203,8 @@ The beta is signed ad hoc for local testing. A Developer ID certificate and nota
 
 ## Credits
 
-Built by [Eulogik](https://eulogik.com). Site: [eulogik.github.io/quillote-site](https://eulogik.github.io/quillote-site/). The editor is [CodeMirror](https://codemirror.net), the Markdown renderer is [markdown-it](https://github.com/markdown-it/markdown-it), the math is [KaTeX](https://katex.org), and the shell is [Tauri](https://tauri.app). No UI or editor fonts are bundled; Quillote uses the platform's fonts.
+Built by [Eulogik](https://eulogik.com). Site: [quillote.com](https://quillote.com/). The editor is [CodeMirror](https://codemirror.net), the Markdown renderer is [markdown-it](https://github.com/markdown-it/markdown-it), the math is [KaTeX](https://katex.org), and the shell is [Tauri](https://tauri.app). No UI or editor fonts are bundled; Quillote uses the platform's fonts.
 
 <p align="center">
-  <a href="https://eulogik.github.io/quillote-site/">Live preview</a>
+  <a href="https://quillote.com/">Website</a>
 </p>

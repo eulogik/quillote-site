@@ -1,6 +1,6 @@
 # Quillote
 
-> Quillote is a tiny code and Markdown editor for macOS, iPhone and Android, with Windows and Linux built from the same codebase. It opens local plain-text files and offers three views: Source, Live and Read. The public beta is 0.1.0. Live mode is the hook: headings, emphasis, code and links style themselves in the buffer you are typing in, while the Markdown stays on disk.
+> Quillote is a tiny code and Markdown editor for macOS, iPhone and Android, with Windows and Linux built from the same codebase. It opens local plain-text files and offers three views: Source, Live and Read. The public beta is 0.1.3. Live mode is the hook: headings, emphasis, code and links style themselves in the buffer you are typing in, while the Markdown stays on disk.
 
 Quillote is built by [Eulogik](https://eulogik.com). Site: https://quillote.com
 
@@ -8,8 +8,8 @@ Key facts:
 
 - macOS DMG: 5.2 MB universal (Apple Silicon + Intel), unsigned public beta.
 - Android APK: 7.2 MB, signed, arm64. Android AAB: 5.0 MB for Play.
-- iPhone: App Store-signed build; TestFlight and App Store review next.
-- Initial JavaScript: 141.1 KB gzipped. App CSS: 4.9 KB gzipped. Read chunk: 39.8 KB gzipped.
+- iPhone: App Store build. The 0.1.0 submission is in review; the 0.1.3 update is uploaded to App Store Connect.
+- Initial JavaScript: 141.7 KB gzipped. App CSS: 5.0 KB gzipped. Read chunk: 39.8 KB gzipped.
 - Latest release: https://github.com/eulogik/quillote-site/releases/latest
 - No account, no analytics, no telemetry and no sync service.
 - Markdown: Source, Live and Read. Code: Source with around 100 languages.
@@ -18,14 +18,14 @@ Key facts:
 - Themes: Night (default, ink and gold) and Ink (warm parchment). System is an explicit option.
 - Crash snapshots every five seconds while the buffer is dirty. Autosave is off on desktop and on for mobile.
 - Windows and Linux installers are built in CI and attached to the GitHub release. They are unsigned in the beta. Windows NSIS and MSI are 2.1 MB and 2.6 MB. Linux ships .deb and .rpm; the AppImage exceeds the 10 MB installer budget and is not shipped.
-- Mobile file model: a picked file is copied into the app sandbox and leaves through the share sheet.
+- Mobile file model: a picked file is copied into the app sandbox. New files save in the same folder and reopen from Recents. Share-sheet export is the next mobile update, not in 0.1.3.
 
 ## Pages
 
 - [Home](https://quillote.com/): product overview, interactive three-mode demo, size numbers, platforms and FAQ.
 - [Support](https://quillote.com/support/): requirements, known issues, the phone file model and contact.
 - [Privacy](https://quillote.com/privacy/): no collection, no cookies, no analytics.
-- [Changelog](https://quillote.com/changelog/): 0.1.0 and the next steps.
+- [Changelog](https://quillote.com/changelog/): 0.1.3, 0.1.2, 0.1.1 and 0.1.0, plus the next steps.
 - [Markdown editor for Mac](https://quillote.com/markdown-editor-for-mac/): the universal Mac app, Live mode, code, PDF and the honest limits.
 - [Markdown editor for iPhone and Android](https://quillote.com/markdown-editor-for-iphone/): the mobile file model, the signed APK, and the App Store build.
 - [Markdown with LaTeX math](https://quillote.com/markdown-editor-with-latex/): KaTeX in Read, lazy loaded and offline.

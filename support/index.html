@@ -50,15 +50,15 @@
         <p class="label"><span>Help</span> Support</p>
         <h1>How to get help.</h1>
         <p class="lead">Quillote is in public beta. Start here for requirements and the file model. If something is still stuck, write to us.</p>
-        <p class="page-updated">Updated 23 October 2026</p>
+        <p class="page-updated">Updated 27 October 2026</p>
       </div>
 
       <div class="prose">
         <h2>Requirements</h2>
         <ul>
           <li><strong>macOS:</strong> Universal build for Apple Silicon and Intel, macOS 10.13 or later. The current beta DMG is not signed or notarized.</li>
-          <li><strong>iPhone:</strong> iOS 15 or later. The App Store build and TestFlight are the next step.</li>
-          <li><strong>Android:</strong> Android 7.0 (API 24) or later. The signed APK is available on the download page; Play Store rollout is next.</li>
+          <li><strong>iPhone:</strong> iOS 15 or later. The 0.1.0 build is in App Store review; the 0.1.3 update is uploaded to App Store Connect.</li>
+          <li><strong>Android:</strong> Android 7.0 (API 24) or later. The signed APK is in the download section of this site; Play Store rollout is next.</li>
           <li><strong>Windows and Linux:</strong> CI-built installers are attached to the GitHub release. They are unsigned for now.</li>
         </ul>
 
@@ -66,29 +66,38 @@
         <p>The beta is unsigned. Drag Quillote into Applications, then right-click the app and choose <strong>Open</strong> once. After that, macOS remembers it. If the app still refuses to launch, check <code>System Settings → Privacy &amp; Security</code> for an Open Anyway button.</p>
 
         <h2>Installing on Windows</h2>
-        <p>Run <code>Quillote_0.1.0_x64-setup.exe</code> (NSIS) or <code>Quillote_0.1.0_x64_en-US.msi</code>. The beta is unsigned, so SmartScreen will warn. Choose <strong>More info</strong>, then <strong>Run anyway</strong>. The MSI is the better choice for a managed or silent install; both install the same app.</p>
+        <p>Run <code>Quillote_0.1.3_x64-setup.exe</code> (NSIS) or <code>Quillote_0.1.3_x64_en-US.msi</code>. The beta is unsigned, so SmartScreen will warn. Choose <strong>More info</strong>, then <strong>Run anyway</strong>. The MSI is the better choice for a managed or silent install; both install the same app.</p>
 
         <h2>Installing on Linux</h2>
-        <p>The <code>.deb</code> and <code>.rpm</code> use the WebKitGTK that your distribution already ships, which is why they are under 3 MB. They are unsigned, so the package manager will warn about the missing repository signature. Use the command for your distribution:</p>
-        <pre><code># Debian, Ubuntu, Linux Mint, Pop!_OS
-sudo apt install ./Quillote_0.1.0_amd64.deb
+        <p>The <code>.deb</code> and <code>.rpm</code> use the WebKitGTK that your distribution already ships, which is why they are under 3 MB. They are built on Ubuntu 24.04 and need glibc 2.39. Use Ubuntu 24.04 or newer, Debian 13 or newer, Linux Mint 22 or newer, Fedora 40 or newer, RHEL 10 or newer, or openSUSE Leap 16 or Tumbleweed. Ubuntu 22.04, Debian 12, RHEL 9 and Fedora 39 are too old for this build. The packages are unsigned, so the package manager will warn about the missing repository signature.</p>
+        <pre><code># Ubuntu 24.04+, Debian 13+, Linux Mint 22+
+sudo apt install ./Quillote_0.1.3_amd64.deb
 
-# Fedora, RHEL, CentOS Stream
-sudo dnf install ./Quillote-0.1.0-1.x86_64.rpm
+# Fedora 40+, RHEL 10+, CentOS Stream 10
+sudo dnf install ./Quillote-0.1.3-1.x86_64.rpm
 
-# openSUSE
-sudo zypper install ./Quillote-0.1.0-1.x86_64.rpm</code></pre>
-        <p>The AppImage is not shipped. Bundling WebKitGTK made it 82 MB, over the 10 MB installer budget. Flatpak and Snap are not in 0.1.0 either; they add a runtime and packaging maintenance that the first beta does not need. Arch users can try converting the <code>.rpm</code> with <code>debtap</code>, but that path is untested; a real AUR package waits for a real Arch test.</p>
+# openSUSE Leap 16 or Tumbleweed
+sudo zypper install ./Quillote-0.1.3-1.x86_64.rpm</code></pre>
+        <p>The AppImage is not shipped. Bundling WebKitGTK made it 82 MB, over the 10 MB installer budget. Flatpak and Snap are not in 0.1.3 either; they add a runtime and packaging maintenance that the first beta does not need. Arch users can try converting the <code>.rpm</code> with <code>debtap</code>, but that path is untested; a real AUR package waits for a real Arch test.</p>
+
+        <h2>Changing the view</h2>
+        <p>The command palette is the settings surface. Open it with <code>Ctrl+K</code> (<code>Cmd+K</code> on macOS). Every action is searchable, and each row shows its shortcut.</p>
+        <ul>
+          <li><strong>Editor font size:</strong> <code>Ctrl+=</code> for bigger, <code>Ctrl+-</code> for smaller. On macOS use <code>Cmd</code>. On a phone, pinch the editor with two fingers. The size runs from 11 to 24 points and is remembered between launches. The palette also lists Increase Font Size and Decrease Font Size.</li>
+          <li><strong>Theme:</strong> the <code>...</code> menu at the top right, or Switch Theme in the palette. System follows the desktop, Ink is the light theme, Night is the dark one.</li>
+          <li><strong>Word wrap and line numbers:</strong> Toggle Word Wrap and Toggle Line Numbers in the palette.</li>
+        </ul>
 
         <h2>The phone file model</h2>
-        <p>Phones do not hand apps a stable path they can write back to. Quillote copies a file you pick into its own sandbox, edits that copy, and exports through the share sheet. This is deliberate: it avoids the silent 0-byte writes that the content provider APIs can cause. Your original stays untouched until you export.</p>
+        <p>Phones do not hand apps a stable path they can write back to. Quillote copies a file you pick into its own sandbox and edits that copy. A new file is saved in the same folder and appears in Recents. This is deliberate: it avoids the silent 0-byte writes that the content provider APIs can cause. Your original stays untouched. Exporting the edited copy through the share sheet is the next mobile task and is not in this beta yet.</p>
 
         <h2>Known issues</h2>
         <ul>
           <li>The macOS DMG is unsigned in the public beta. Developer ID signing and notarization are the next step.</li>
           <li>Windows and Linux installers are CI-built and unsigned. A native smoke test on each platform is still on the list.</li>
-          <li>The iPhone build is App Store-signed; TestFlight and App Store review are the next step.</li>
+          <li>The iPhone download is not public yet. The 0.1.0 build is in App Store review, and 0.1.3 is uploaded to App Store Connect.</li>
           <li>On Android, the system picker ignores extension filters. Quillote checks the picked file name before it copies anything and refuses binary files.</li>
+          <li>Mobile export through the share sheet is not in this beta. Saved files reopen from Recents inside Quillote.</li>
           <li>Toggling word wrap or line numbers rebuilds the active view. The text and selection survive; the undo history for that document does not.</li>
         </ul>
 

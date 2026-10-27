@@ -28,7 +28,7 @@
   <link rel="preload" href="../assets/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/site.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://quillote.com/press/", "url": "https://quillote.com/press/", "name": "Press kit: Quillote, a tiny Markdown editor with Live mode", "description": "Press kit for Quillote: facts, founder quote, logo, screenshots and a Live mode video for a 5.2 MB Markdown and code editor built by Eulogik.", "isPartOf": {"@id": "https://quillote.com/#website"}, "about": {"@id": "https://quillote.com/#app"}, "primaryImageOfPage": "https://quillote.com/assets/img/og.jpg", "datePublished": "2026-10-23", "dateModified": "2026-10-23"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Quillote", "item": "https://quillote.com/"}, {"@type": "ListItem", "position": 2, "name": "Press kit", "item": "https://quillote.com/press/"}]}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://quillote.com/press/", "url": "https://quillote.com/press/", "name": "Press kit: Quillote, a tiny Markdown editor with Live mode", "description": "Press kit for Quillote: facts, founder quote, logo, screenshots and a Live mode video for a 5.2 MB Markdown and code editor built by Eulogik.", "isPartOf": {"@id": "https://quillote.com/#website"}, "about": {"@id": "https://quillote.com/#app"}, "primaryImageOfPage": "https://quillote.com/assets/img/og.jpg", "datePublished": "2026-10-23", "dateModified": "2026-10-27"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Quillote", "item": "https://quillote.com/"}, {"@type": "ListItem", "position": 2, "name": "Press kit", "item": "https://quillote.com/press/"}]}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -54,7 +54,7 @@
         <p class="label"><span>Press</span> Press kit</p>
         <h1>Quillote press kit.</h1>
         <p class="lead">Everything needed to write about a small Markdown editor with a real Live mode.</p>
-        <p class="page-updated">Updated 23 October 2026</p>
+        <p class="page-updated">Updated 27 October 2026</p>
       </div>
       <div class="prose">
         <p><strong>Quillote is a tiny Markdown and code editor with a real Live mode.</strong> It opens local plain-text files and offers three views: Source, Live and Read. Live styles headings, emphasis, code and links in the buffer you are typing in, while the Markdown stays on disk. Read renders tables, KaTeX math and images. It is built by <a href="https://eulogik.com" rel="noopener">Eulogik</a>.</p>
@@ -63,15 +63,15 @@
         <table>
           <thead><tr><th scope="col">Fact</th><th scope="col">Detail</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Release</th><td>Quillote 0.1.0, public beta, 23 October 2026</td></tr>
-            <tr><th scope="row">Price</th><td>Free beta. Pricing for 1.0 has not been decided.</td></tr>
+            <tr><th scope="row">Release</th><td>Quillote 0.1.3, public beta, 27 October 2026</td></tr>
+            <tr><th scope="row">Price</th><td>Free. $0, with no paid tier, subscription or in-app purchase.</td></tr>
             <tr><th scope="row">Platforms</th><td>macOS, iPhone and Android. Windows and Linux installers are built by CI from the same source.</td></tr>
             <tr><th scope="row">macOS</th><td>5.2 MB universal DMG, Apple Silicon and Intel, macOS 10.13+. Unsigned beta.</td></tr>
             <tr><th scope="row">Android</th><td>7.2 MB signed arm64 APK, Android 7.0+</td></tr>
-            <tr><th scope="row">iPhone</th><td>3.4 MB App Store-signed IPA. TestFlight and App Store review are next.</td></tr>
+            <tr><th scope="row">iPhone</th><td>App Store build. The 0.1.0 submission is in review; the 0.1.3 update is uploaded to App Store Connect.</td></tr>
             <tr><th scope="row">Windows and Linux</th><td>2.1 MB NSIS, 2.6 MB MSI, 2.9 MB .deb, 2.9 MB .rpm. CI-built and unsigned.</td></tr>
-            <tr><th scope="row">Initial JavaScript</th><td>141.1 KB gzipped. App CSS: 4.9 KB gzipped. Read chunk: 39.8 KB.</td></tr>
-            <tr><th scope="row">Tests</th><td>277 frontend tests, 26 Rust tests</td></tr>
+            <tr><th scope="row">Initial JavaScript</th><td>141.7 KB gzipped. App CSS: 5.0 KB gzipped. Read chunk: 39.8 KB.</td></tr>
+            <tr><th scope="row">Tests</th><td>288 frontend tests in 20 files, 26 Rust tests</td></tr>
             <tr><th scope="row">Privacy</th><td>No account, no analytics, no telemetry, no sync service</td></tr>
           </tbody>
         </table>
@@ -79,7 +79,7 @@
         <h2>The story</h2>
         <p>Quillote started with a small frustration: most Markdown editors either hide the source in a WYSIWYG view or park a preview in a second pane. Both split your attention. The file is the thing you are editing, so the file should be the thing you see.</p>
         <p>Live mode styles the file in place. Headings, emphasis, code and links settle into place in the same buffer. The Markdown never leaves. Read is one key away for tables, KaTeX math and the finished page. The trade is deliberate: Live is an editor, not a preview pretending to be the document.</p>
-        <p>The other constraint was size. The app uses the system webview instead of bundling Chromium, ships no UI or editor fonts and has a size-tuned Rust release profile. The universal macOS DMG is 5.2 MB. The initial JavaScript is 141.1 KB gzipped. The budgets run in CI.</p>
+        <p>The other constraint was size. The app uses the system webview instead of bundling Chromium, ships no UI or editor fonts and has a size-tuned Rust release profile. The universal macOS DMG is 5.2 MB. The initial JavaScript is 141.7 KB gzipped. The budgets run in CI.</p>
         <blockquote>I wanted a Markdown editor that kept the source visible while still feeling like a document. Live styles the file in place. Read turns it into a page. Everything else, including the size, follows from that.<br><br>Gautam Kishore, founder, Eulogik</blockquote>
 
         <h2>Assets</h2>
@@ -90,15 +90,16 @@
           <li><a href="../assets/img/quillote-feature.png">Feature graphic, PNG, 1024 x 500</a></li>
           <li><a href="../assets/img/desktop-live-press.png">Desktop Live mode, PNG, 2400 x 1600</a></li>
           <li><a href="../assets/img/iphone-first-run-press.png">iPhone first run, PNG, 1206 x 2622</a></li>
+          <li><a href="https://quillote.com/assets/downloads/quillote-press-kit.zip">iPhone Live, Read and Source, and iPad first run, Live and Read, in the ZIP</a></li>
           <li><a href="../assets/img/quillote-live.mp4">Live mode, MP4</a> and <a href="../assets/img/quillote-live.gif">GIF</a></li>
-          <li><a href="../assets/downloads/quillote-press-kit.zip">Download the full press kit (ZIP, 1.9 MB)</a></li>
+          <li><a href="../assets/downloads/quillote-press-kit.zip">Download the full press kit (ZIP, 2.8 MB)</a></li>
         </ul>
 
         <h2>Usage</h2>
         <p>You may use the screenshots, logo and video for editorial coverage of Quillote. Do not alter the logo, do not imply that Eulogik endorses your product, and do not use the screenshots to advertise a different app. Quillote and the Q mark are trademarks of Eulogik.</p>
 
         <h2>Contact</h2>
-        <p>Email <a href="mailto:hello@quillote.com">hello@quillote.com</a>. The site is <a href="https://quillote.com">quillote.com</a>; the public preview is <a href="https://eulogik.github.io/quillote-site/">eulogik.github.io/quillote-site</a>. The latest release is on <a href="https://github.com/eulogik/quillote-site/releases/latest" rel="noopener">GitHub</a>.</p>
+        <p>Email <a href="mailto:hello@quillote.com">hello@quillote.com</a>. The site is <a href="https://quillote.com">quillote.com</a>. The latest release is on <a href="https://github.com/eulogik/quillote-site/releases/latest" rel="noopener">GitHub</a>.</p>
       </div>
       <div class="page-cta">
         <a class="btn btn-gold" href="../#download">Download the beta</a>

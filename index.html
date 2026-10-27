@@ -44,7 +44,7 @@
         "@id": "https://quillote.com/#website",
         "url": "https://quillote.com/",
         "name": "Quillote",
-        "description": "A tiny code and Markdown editor with live preview.",
+        "description": "A tiny code and Markdown editor with Source, Live and Read.",
         "inLanguage": "en",
         "publisher": { "@id": "https://quillote.com/#org" }
       },
@@ -65,7 +65,7 @@
         "about": { "@id": "https://quillote.com/#app" },
         "primaryImageOfPage": "https://quillote.com/assets/img/og.jpg",
         "datePublished": "2026-10-22",
-        "dateModified": "2026-10-23"
+        "dateModified": "2026-10-27"
       },
       {
         "@type": "SoftwareApplication",
@@ -74,10 +74,10 @@
         "operatingSystem": "macOS, iOS, Android, Windows, Linux",
         "applicationCategory": "DeveloperApplication",
         "description": "A tiny code and Markdown editor with Source, Live and Read views. Local files, no account, no telemetry.",
-        "softwareVersion": "0.1.0",
+        "softwareVersion": "0.1.3",
         "isAccessibleForFree": true,
         "license": "Proprietary",
-        "downloadUrl": "https://quillote.com/assets/downloads/Quillote_0.1.0_universal.dmg",
+        "downloadUrl": "https://quillote.com/assets/downloads/Quillote_0.1.3_universal.dmg",
         "screenshot": "https://quillote.com/assets/img/desktop-live-hero.png",
         "featureList": [
           "Source, Live and Read views",
@@ -108,7 +108,7 @@
             "name": "Is Quillote free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The beta is free. Pricing for the 1.0 release has not been decided."
+              "text": "Yes. Quillote is free. There is no paid tier, no subscription and no account."
             }
           },
           {
@@ -148,7 +148,7 @@
             "name": "Can I use it on my phone?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The iPhone and Android apps are in beta. A file you open copies into the app sandbox and leaves through the share sheet."
+              "text": "Yes. The Android APK is available now and the iPhone build is in App Store review. A file you open copies into the app sandbox, and a new file saves in the same folder and reopens from Recents. Share-sheet export is the next mobile update."
             }
           },
           {
@@ -210,17 +210,17 @@
       <img class="hero-watermark" src="assets/img/quillote-mark.svg" alt="" width="820" height="820" aria-hidden="true">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> Quillote 0.1.0 · public beta</p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Quillote 0.1.3 · public beta</p>
           <h1 id="hero-title">Write Markdown. Watch it <em>take shape</em>.</h1>
           <p class="hero-sub">Live mode styles headings, emphasis, code and links as you type, with the source still in the file. A 5.2 MB universal Mac app, 7.2 MB on Android, and the same three views on iPhone. No account, no telemetry, no browser engine in a trench coat.</p>
           <div class="hero-actions">
-            <a class="btn btn-gold" href="assets/downloads/Quillote_0.1.0_universal.dmg" download>Download for macOS</a>
+            <a class="btn btn-gold" href="assets/downloads/Quillote_0.1.3_universal.dmg" download>Download for macOS</a>
             <a class="btn btn-ghost" href="#modes">See the three modes <span aria-hidden="true">→</span></a>
           </div>
           <p class="hero-note">5.2 MB universal DMG · Apple Silicon + Intel · macOS 10.13+ · unsigned beta, right-click to open</p>
           <div class="hero-proof">
             <span><strong>0</strong> telemetry</span>
-            <span><strong>141.1 KB</strong> initial JS</span>
+            <span><strong>141.7 KB</strong> initial JS</span>
             <span><strong>5</strong> platforms, one codebase</span>
           </div>
         </div>
@@ -454,7 +454,7 @@ The source is never out of reach.</pre>
       <div class="stats">
         <div class="stat"><span class="stat-num">5.2</span><span class="stat-unit">MB</span><span class="stat-label">universal DMG</span></div>
         <div class="stat"><span class="stat-num">7.2</span><span class="stat-unit">MB</span><span class="stat-label">Android APK</span></div>
-        <div class="stat"><span class="stat-num">141.1</span><span class="stat-unit">KB</span><span class="stat-label">initial JS, gzipped</span></div>
+        <div class="stat"><span class="stat-num">141.7</span><span class="stat-unit">KB</span><span class="stat-label">initial JS, gzipped</span></div>
         <div class="stat"><span class="stat-num">0</span><span class="stat-unit"></span><span class="stat-label">trackers, accounts, network calls</span></div>
       </div>
       <div class="table-wrap">
@@ -486,25 +486,25 @@ The source is never out of reach.</pre>
         <article class="platform is-ready">
           <div class="platform-top"><h3>macOS</h3><span class="status status-ready">Available</span></div>
           <p>Universal beta, 5.2 MB DMG for Apple Silicon and Intel. Unsigned for now; right-click and Open the first time.</p>
-          <a class="text-link" href="assets/downloads/Quillote_0.1.0_universal.dmg" download>Download the DMG <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="assets/downloads/Quillote_0.1.3_universal.dmg" download>Download the DMG <span aria-hidden="true">↓</span></a>
         </article>
         <article class="platform">
-          <div class="platform-top"><h3>iPhone</h3><span class="status">Beta</span></div>
+          <div class="platform-top"><h3>iPhone</h3><span class="status">In review</span></div>
           <p>Native iOS shell with the same three views, the formatting bar above the keyboard, and files copied into the app sandbox.</p>
-          <span class="platform-note">TestFlight next</span>
+          <span class="platform-note">0.1.0 is in App Store review; 0.1.3 is uploaded</span>
         </article>
         <article class="platform">
           <div class="platform-top"><h3>Android</h3><span class="status">Beta</span></div>
-          <p>7.2 MB signed APK. Android ignores extension filters in the picker, so Quillote checks the file name before it copies anything.</p>
-          <a class="text-link" href="assets/downloads/Quillote_0.1.0_arm64.apk" download>Download the APK <span aria-hidden="true">↓</span></a>
+          <p>7.2 MB signed APK. New files save in the app and reopen from Recents. Share-sheet export is the next mobile update. Android ignores extension filters in the picker, so Quillote checks the file name before it copies anything.</p>
+          <a class="text-link" href="assets/downloads/Quillote_0.1.3_arm64.apk" download>Download the APK <span aria-hidden="true">↓</span></a>
         </article>
         <article class="platform">
-          <div class="platform-top"><h3>Windows</h3><span class="status status-later">From source</span></div>
+          <div class="platform-top"><h3>Windows</h3><span class="status">Beta</span></div>
           <p>The same Tauri app and WebView2. CI-built NSIS and MSI installers, 2.1 MB and 2.6 MB, are attached to the GitHub release; they are unsigned for now.</p>
           <a class="text-link" href="https://github.com/eulogik/quillote-site/releases" rel="noopener">Get the installer <span aria-hidden="true">↗</span></a>
         </article>
         <article class="platform">
-          <div class="platform-top"><h3>Linux</h3><span class="status status-later">From source</span></div>
+          <div class="platform-top"><h3>Linux</h3><span class="status">Beta</span></div>
           <p>WebKitGTK 4.1. CI builds a .deb and an .rpm from the same source and attaches them to the GitHub release. The AppImage is not shipped: bundling WebKitGTK pushed it to 82 MB, over the 10 MB budget.</p>
           <a class="text-link" href="https://github.com/eulogik/quillote-site/releases" rel="noopener">Get a package <span aria-hidden="true">↗</span></a>
         </article>
@@ -524,7 +524,7 @@ The source is never out of reach.</pre>
         </details>
         <details class="faq-item">
           <summary>Is Quillote free?</summary>
-          <p>The public beta is free. Pricing for the 1.0 release has not been decided. If a paid tier arrives, the local editor stays usable without an account.</p>
+          <p>Yes. Quillote is free. There is no paid tier, no subscription and no account. The Mac app is a direct DMG, the Android build is a signed APK, and the iPhone app is in App Store review.</p>
         </details>
         <details class="faq-item">
           <summary>Does it work offline?</summary>
@@ -540,7 +540,7 @@ The source is never out of reach.</pre>
         </details>
         <details class="faq-item">
           <summary>Can I use it on my phone?</summary>
-          <p>Yes. The iPhone and Android apps are in beta. The Android APK is signed and downloadable below; iPhone goes through TestFlight and the App Store. On mobile, a file you open copies into the app sandbox; edits leave through the share sheet. That is deliberate, because writing back to a picked provider URL is not reliable yet.</p>
+          <p>Yes. The Android APK is signed and downloadable below, and the iPhone build is in App Store review. On both, a file you open copies into the app sandbox. A new file saves in the same folder and reopens from Recents. Exporting a copy through the share sheet is the next mobile update, not part of 0.1.3. Writing back to a picked provider URL is still not reliable.</p>
         </details>
         <details class="faq-item">
           <summary>Does it support math and tables?</summary>
@@ -568,13 +568,14 @@ The source is never out of reach.</pre>
           <h2 id="download-title">Take the quiet way in.</h2>
           <p class="lead">The macOS beta is a 5.2 MB universal DMG. Open it, drag Quillote to Applications, and write something. Android users can install the signed 7.2 MB APK. No sign-up, no onboarding flow, no sample document pretending to be yours.</p>
           <div class="hero-actions">
-            <a class="btn btn-gold" href="assets/downloads/Quillote_0.1.0_universal.dmg" download>Download for macOS <span aria-hidden="true">↓</span></a>
-            <a class="btn btn-ghost" href="assets/downloads/Quillote_0.1.0_arm64.apk" download>Download for Android <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-gold" href="assets/downloads/Quillote_0.1.3_universal.dmg" download>Download for macOS <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="assets/downloads/Quillote_0.1.3_arm64.apk" download>Download for Android <span aria-hidden="true">↓</span></a>
             <a class="btn btn-ghost" href="changelog/">Read the changelog</a>
           </div>
           <p class="hero-note">Unsigned beta · Universal (Apple Silicon + Intel) · macOS 10.13+ · right-click Open the first time</p>
-          <p class="hash-line">DMG SHA-256 <code id="dmg-hash">185c2304af31ee032a6397316e05d6141f19e7db7063f0cd6a1431f6198384a7</code></p>
-          <p class="hash-line">APK SHA-256 <code>5c06b0cef231c5e87bb20f1cc36e68711a2af3ccbae6ddbc8075382dccf13272</code></p>
+          <p class="hero-note">Phone files save inside Quillote and reopen from Recents. Share-sheet export is the next mobile update.</p>
+          <p class="hash-line">DMG SHA-256 <code id="dmg-hash">b87712f6d7e630914f2421c19861bf0909764654c57cf534e90944d994475ded</code></p>
+          <p class="hash-line">APK SHA-256 <code>6cb984fdf4a2b4603c9117029e713cab2e166d65339be52a1c45f804ed930fa1</code></p>
         </div>
         <div class="download-art" aria-hidden="true">
           <img src="assets/img/quillote-mark.svg" alt="" width="260" height="260">
