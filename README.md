@@ -168,7 +168,7 @@ The app source and the design notes stay private during the beta. This repositor
 - The direct macOS DMG is **unsigned**. Right-click and Open the first time. Developer ID signing and notarization are the next release step.
 - The Mac App Store build needs sandboxing and security-scoped bookmarks for recents. It is not in this beta.
 - Live mode styles headings, emphasis, code and links. Tables and math wait for Read. That is deliberate: Live is an editor, not a preview pretending to be one.
-- CSV and TSV open as plain text with spreadsheet-oriented highlighting in 1.0. A read-only table preview is a candidate for 1.1.
+- CSV and TSV open as plain text with spreadsheet-oriented highlighting in 1.0. A read-only table preview is queued for v1.1, after mobile share-sheet export.
 - Windows and Linux installers are CI-built and unsigned. A native GUI smoke test on each platform is still on the list. The Linux AppImage is intentionally not shipped: it bundled WebKitGTK to 82 MB and broke the installer budget.
 
 ## Privacy
