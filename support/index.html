@@ -50,15 +50,15 @@
         <p class="label"><span>Help</span> Support</p>
         <h1>How to get help.</h1>
         <p class="lead">Quillote is in public beta. Start here for requirements and the file model. If something is still stuck, write to us.</p>
-        <p class="page-updated">Updated 27 October 2026</p>
+        <p class="page-updated">Updated 3 November 2026</p>
       </div>
 
       <div class="prose">
         <h2>Requirements</h2>
         <ul>
           <li><strong>macOS:</strong> Universal build for Apple Silicon and Intel, macOS 10.13 or later. The current beta DMG is not signed or notarized.</li>
-          <li><strong>iPhone:</strong> iOS 15 or later. The 0.1.0 build is in App Store review; the 0.1.3 update is uploaded to App Store Connect.</li>
-          <li><strong>Android:</strong> Android 7.0 (API 24) or later. The signed APK is in the download section of this site; Play Store rollout is next.</li>
+          <li><strong>iPhone and iPad:</strong> iOS 15 or later. 0.1.3 is live on the App Store, 6 MB.</li>
+          <li><strong>Android:</strong> Android 7.0 (API 24) or later. 0.1.4 is live on Google Play at 3.64 MB. The signed 7.2 MB APK is in the download section of this site.</li>
           <li><strong>Windows and Linux:</strong> CI-built installers are attached to the GitHub release. They are unsigned for now.</li>
         </ul>
 
@@ -95,7 +95,7 @@ sudo zypper install ./Quillote-0.1.3-1.x86_64.rpm</code></pre>
         <ul>
           <li>The macOS DMG is unsigned in the public beta. Developer ID signing and notarization are the next step.</li>
           <li>Windows and Linux installers are CI-built and unsigned. A native smoke test on each platform is still on the list.</li>
-          <li>The iPhone download is not public yet. The 0.1.0 build is in App Store review, and 0.1.3 is uploaded to App Store Connect.</li>
+          <li>The iPhone and iPad apps are the same binary, so the iPad layout is the tablet layout, not a separate app.</li>
           <li>On Android, the system picker ignores extension filters. Quillote checks the picked file name before it copies anything and refuses binary files.</li>
           <li>Mobile export through the share sheet is not in this beta. Saved files reopen from Recents inside Quillote.</li>
           <li>Toggling word wrap or line numbers rebuilds the active view. The text and selection survive; the undo history for that document does not.</li>

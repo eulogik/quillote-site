@@ -390,6 +390,33 @@ a {
   transform: translateY(-2px);
 }
 
+/* The two store badges. The Google asset carries its own clear space, so it
+   is set a little taller to match the visible height of the Apple badge. */
+.store-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.store-badge {
+  display: inline-flex;
+  line-height: 0;
+  border-radius: 9px;
+}
+.store-badge img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+.store-badge--play img {
+  height: 54px;
+}
+.store-badge:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
 .hero-note {
   margin: 18px 0 0;
   color: var(--quiet);
@@ -442,6 +469,56 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.film-section {
+  padding-top: clamp(36px, 5vw, 64px);
+}
+.film-frame {
+  max-width: 1040px;
+  margin: 0 auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #05070a;
+  box-shadow:
+    0 40px 110px rgba(0, 0, 0, 0.58),
+    0 8px 24px rgba(0, 0, 0, 0.38);
+}
+.film-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #05070a;
+}
+.film-meta {
+  max-width: 1040px;
+  margin: 16px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--quiet);
+}
+.film-meta a {
+  color: var(--gold);
+  text-decoration: none;
+}
+.film-meta a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .film-frame {
+    border-radius: 12px;
+  }
+  .film-meta {
+    flex-direction: column;
+    gap: 6px;
+  }
 }
 
 .window-frame {
@@ -2039,6 +2116,12 @@ h2 {
   }
   .hero-note {
     font-size: 10.5px;
+  }
+  .store-badge img {
+    height: 36px;
+  }
+  .store-badge--play img {
+    height: 49px;
   }
   .phone-frame {
     width: 112px;

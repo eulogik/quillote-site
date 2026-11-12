@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Write Markdown. Watch it take shape.</strong><br>
-  A tiny Markdown and code editor with a real Live mode. 5.2 MB on your Mac, 7.2 MB on Android. Your files stay on your disk.
+  A tiny Markdown and code editor with a real Live mode. 5.2 MB on your Mac, 6 MB on the App Store, 3.64 MB on Google Play. Your files stay on your disk.
 </p>
 
 <p align="center">
@@ -19,9 +19,9 @@
 </p>
 
 <p align="center">
-  <img alt="288 frontend tests and 26 Rust tests" src="https://img.shields.io/badge/tests-288%20%2B%2026-brightgreen?style=flat-square">
+  <img alt="319 frontend tests and 26 Rust tests" src="https://img.shields.io/badge/tests-319%20%2B%2026-brightgreen?style=flat-square">
   <img alt="Universal macOS installer: 5.2 MB" src="https://img.shields.io/badge/macOS%20DMG-5.2%20MB-blue?style=flat-square">
-  <img alt="Initial JavaScript: 141.7 KB gzipped" src="https://img.shields.io/badge/initial%20JS-141.7%20KB%20gz-6f42c1?style=flat-square">
+  <img alt="Initial JavaScript: 143.1 KB gzipped" src="https://img.shields.io/badge/initial%20JS-143.1%20KB%20gz-6f42c1?style=flat-square">
   <img alt="Proprietary license" src="https://img.shields.io/badge/license-proprietary-lightgrey?style=flat-square">
 </p>
 
@@ -56,8 +56,8 @@ The file on disk is always `.md` or plain text. No database, no proprietary docu
 | Platform | Build | Notes |
 | --- | --- | --- |
 | **macOS** | [Universal DMG, 5.2 MB](https://github.com/eulogik/quillote-site/releases/latest) | Apple Silicon + Intel, macOS 10.13+. Unsigned beta: right-click the app and choose Open the first time. |
-| **Android** | [Signed APK, 7.2 MB](https://github.com/eulogik/quillote-site/releases/latest) | Android 7.0 (API 24)+, arm64. Sideload the APK; Play Store rollout is next. |
-| **iPhone** | [App Store review](https://quillote.com/) | The 0.1.0 build is in review. The 0.1.3 update is uploaded to App Store Connect. |
+| **Android** | [Google Play, 3.64 MB](https://play.google.com/store/apps/details?id=com.quillote.app) or [signed APK, 7.2 MB](https://github.com/eulogik/quillote-site/releases/latest) | Android 7.0 (API 24)+, arm64. 0.1.4 is live on Play; the APK is the same build for sideloading. |
+| **iPhone and iPad** | [App Store, 6 MB](https://apps.apple.com/app/id6826502388) | 0.1.3 is live. Free, iPhone and iPad. |
 | **Windows** | GitHub release | CI-built NSIS and MSI installers, 2.1 MB and 2.6 MB. Unsigned; expect SmartScreen. |
 | **Linux** | GitHub release | CI-built `.deb` and `.rpm`, 2.9 MB each. Unsigned. No AppImage: bundling WebKitGTK made it 82 MB. |
 
@@ -86,7 +86,7 @@ The [latest release](https://github.com/eulogik/quillote-site/releases/latest) h
 
 - **One file, three views.** `Cmd/Ctrl+1`, `2`, `3`. The file never changes format. There is no split view to manage and no preview pane to sync.
 - **A real editor.** CodeMirror 6, around 100 languages, line numbers, word wrap, language override, and a lazy grammar chunk per language. Markdown gets the same editor, not a textarea.
-- **Small on purpose.** The universal macOS DMG is 5.2 MB. The initial JavaScript is 141.7 KB gzipped. The app CSS is 5.0 KB. Those are hard gates in the build, not launch-day claims.
+- **Small on purpose.** The universal macOS DMG is 5.2 MB. The initial JavaScript is 143.1 KB gzipped. The app CSS is 5.0 KB. Those are hard gates in the build, not launch-day claims.
 - **Local by default.** No account, no analytics, no telemetry, no background network calls. Files stay in plain text on your disk.
 - **The phone is a first-class target.** The same three views, a formatting bar above the keyboard, and a file copied into the app sandbox. A new file saves in the same folder and reopens from Recents. No write-back to a provider URL that might silently fail.
 - **Built for the machine.** The system webview instead of bundled Chromium. A size-tuned Rust release profile. Keyboard-first on the desktop, touch-sized on the phone.
@@ -97,18 +97,18 @@ Every number is measured by `node scripts/check-size.mjs` and enforced in CI.
 
 | Gate | Current | Limit |
 | --- | ---: | ---: |
-| Initial JS (entry chunk) | 141.7 KB gz | 200 KB gz |
+| Initial JS (entry chunk) | 143.1 KB gz | 200 KB gz |
 | App CSS | 5.0 KB gz | 12 KB gz |
 | Read renderer chunk | 39.8 KB gz | 60 KB gz |
 | Largest other lazy chunk | 33.5 KB gz | 80 KB gz |
-| KaTeX class, raw | 383.1 KB | 500 KB |
+| KaTeX class, raw | 379.2 KB | 500 KB |
 | macOS DMG, universal | 5.2 MB | 10 MB |
 | Android APK | 7.2 MB | 15 MB |
 | Linux .deb / .rpm | 2.9 MB | 10 MB |
 | Windows NSIS / MSI | 2.1 MB / 2.6 MB | 10 MB |
 | iOS IPA | 3.4 MB | 15 MB |
 
-The tests: **288 frontend tests** in 20 files and **26 Rust tests**. `pnpm test`, `cargo test`, `tsc --noEmit` and Biome all run in CI.
+The tests: **319 frontend tests** in 23 files and **26 Rust tests**. `pnpm test`, `cargo test`, `tsc --noEmit` and Biome all run in CI.
 
 ## Site development
 
@@ -147,7 +147,7 @@ Site details:
 - `assets/downloads/`: the universal macOS beta DMG, the signed Android APK and the press kit.
 - `llms.txt`, `index.md`, `robots.txt`, `sitemap.xml`: the AI-readable summary, Markdown mirror and crawler files.
 
-Site copy rules: the macOS build is unsigned and universal, the Android APK is signed, the iPhone 0.1.0 build is in App Store review and not public yet, and Windows/Linux are CI-built and unsigned. Do not claim a store listing is public before it is. Mobile files save in the app sandbox; do not claim share-sheet export until it ships.
+Site copy rules: the macOS build is unsigned and universal, the Android APK is signed, iOS 0.1.3 and Android 0.1.4 are live, and Windows/Linux are CI-built and unsigned. Mobile files save in the app sandbox; do not claim share-sheet export until it ships.
 
 ## Under the hood
 
@@ -195,7 +195,7 @@ Yes. The current DMG is universal: Apple Silicon and Intel, macOS 10.13 or later
 
 ### Can I use it on my phone?
 
-Yes. The Android APK is signed and downloadable now. The iPhone 0.1.0 build is in App Store review; the 0.1.3 update is uploaded to App Store Connect. On both, a file you open copies into the app sandbox. A new file saves in the same folder and reopens from Recents. Share-sheet export is the next mobile update.
+Yes. Quillote is live on the App Store and Google Play, and the signed APK is downloadable. On both, a file you open copies into the app sandbox. A new file saves in the same folder and reopens from Recents. Share-sheet export is the next mobile update.
 
 ### Why is the Mac app not notarized?
 
