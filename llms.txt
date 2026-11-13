@@ -1,13 +1,13 @@
 # Quillote
 
-> Quillote is a tiny code and Markdown editor for macOS, iPhone, iPad and Android, with Windows and Linux built from the same codebase. It opens local plain-text files and offers three views: Source, Live and Read. iOS 0.1.3 and Android 0.1.4 are live; desktop 0.1.3 is the public beta. Live mode is the hook: headings, emphasis, code and links style themselves in the buffer you are typing in, while the Markdown stays on disk.
+> Quillote is a tiny code and Markdown editor for macOS, iPhone, iPad and Android, with Windows and Linux built from the same codebase. It opens local plain-text files and offers three views: Source, Live and Read. iOS 0.1.4 and Android 0.1.4 are live; desktop 0.1.3 is the public beta. Live mode is the hook: headings, emphasis, code and links style themselves in the buffer you are typing in, while the Markdown stays on disk.
 
 Quillote is built by [Eulogik](https://eulogik.com). Site: https://quillote.com
 
 Key facts:
 
 - macOS DMG: 5.2 MB universal (Apple Silicon + Intel), unsigned public beta.
-- iPhone and iPad: 0.1.3 on the App Store, 6 MB. Free.
+- iPhone and iPad: 0.1.4 on the App Store, 6 MB. Free.
 - Android: 0.1.4 on Google Play, 3.64 MB download. The signed arm64 APK is 7.2 MB; the AAB is 4.8 MB.
 - Initial JavaScript: 143.1 KB gzipped. App CSS: 5.0 KB gzipped. Read chunk: 39.8 KB gzipped.
 - Latest release: https://github.com/eulogik/quillote-site/releases/latest

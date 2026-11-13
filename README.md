@@ -57,7 +57,7 @@ The file on disk is always `.md` or plain text. No database, no proprietary docu
 | --- | --- | --- |
 | **macOS** | [Universal DMG, 5.2 MB](https://github.com/eulogik/quillote-site/releases/latest) | Apple Silicon + Intel, macOS 10.13+. Unsigned beta: right-click the app and choose Open the first time. |
 | **Android** | [Google Play, 3.64 MB](https://play.google.com/store/apps/details?id=com.quillote.app) or [signed APK, 7.2 MB](https://github.com/eulogik/quillote-site/releases/latest) | Android 7.0 (API 24)+, arm64. 0.1.4 is live on Play; the APK is the same build for sideloading. |
-| **iPhone and iPad** | [App Store, 6 MB](https://apps.apple.com/app/id6826502388) | 0.1.3 is live. Free, iPhone and iPad. |
+| **iPhone and iPad** | [App Store, 6 MB](https://apps.apple.com/app/id6826502388) | 0.1.4 is live. Free, iPhone and iPad. |
 | **Windows** | GitHub release | CI-built NSIS and MSI installers, 2.1 MB and 2.6 MB. Unsigned; expect SmartScreen. |
 | **Linux** | GitHub release | CI-built `.deb` and `.rpm`, 2.9 MB each. Unsigned. No AppImage: bundling WebKitGTK made it 82 MB. |
 
@@ -147,7 +147,7 @@ Site details:
 - `assets/downloads/`: the universal macOS beta DMG, the signed Android APK and the press kit.
 - `llms.txt`, `index.md`, `robots.txt`, `sitemap.xml`: the AI-readable summary, Markdown mirror and crawler files.
 
-Site copy rules: the macOS build is unsigned and universal, the Android APK is signed, iOS 0.1.3 and Android 0.1.4 are live, and Windows/Linux are CI-built and unsigned. Mobile files save in the app sandbox; do not claim share-sheet export until it ships.
+Site copy rules: the macOS build is unsigned and universal, the Android APK is signed, iOS 0.1.4 and Android 0.1.4 are live, and Windows/Linux are CI-built and unsigned. Mobile files save in the app sandbox; do not claim share-sheet export until it ships.
 
 ## Under the hood
 
